@@ -17,8 +17,6 @@
     align-items: center;
 }
 
-
-
 .display-4 {
     display: flex;
     cursor: pointer;
@@ -31,7 +29,6 @@
 }
 .theme-logo {
     width: 50px;
-    /* float: right; */
 }
 
 .img-container {
@@ -55,7 +52,6 @@
     min-height: 180px;
     position: relative;
     display: block;
-
 }
 
 .card-title {
@@ -97,7 +93,7 @@ span {
 }
 
 button {
-    margin-left: 10px;
+    margin-left: 5px;
 }
 
 .single-pdf-btn {

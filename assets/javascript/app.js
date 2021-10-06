@@ -1,12 +1,3 @@
-// const dotenv = require('dotenv').config()
-
-
-
-// console.log(process.env.API_KEY);
-
-// const legoAPI = process.env.API_KEY;
-
-
 const firebaseConfig = {
     apiKey: "AIzaSyAr65vTnU8UpqU71rVzXy3UN6NO14s6sjs",
     authDomain: "lego-inventory-a465a.firebaseapp.com",
@@ -20,10 +11,6 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 var database = firebase.database();
-
-
-
-
 
 $(document).ready(function() {
     database.ref().on('child_added', function(childsnapshot) {
@@ -64,8 +51,7 @@ $(document).ready(function() {
         $(".display-4").on('click', () => {
             $(".jumbotron-container").removeClass('jumbotron-full');
             $(".row").append(newCard);
-        })
-
+        });
         // $(".row").append(newCard);
     });
 });
