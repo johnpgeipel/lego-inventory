@@ -1,0 +1,116 @@
+.jumbotron {
+    background: #ffcf00;
+    color: #EEEEEE;
+    margin-bottom: 20px;
+    height: 100%;
+    transition: height 2s, transform .5s, ease-in-out;
+}
+
+.jumbotron-full {
+    height: 100vh;
+    transition: height 2s, transform .5s, ease-in-out;
+}
+
+.jumbotron-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.display-4 {
+    display: flex;
+    cursor: pointer;
+}
+
+.card {
+    border: none;
+    box-shadow: 0px 2px 7px #6e6e6e49;
+    margin-bottom: 15px;
+}
+.theme-logo {
+    width: 50px;
+    /* float: right; */
+}
+
+.img-container {
+    height: 175px;
+    display: flex;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.card-img-top {
+    object-fit: contain;
+    transition: .2s ease-in-out;
+}
+
+.card-img-top:hover {
+    transition: .2s ease-in-out;
+    transform: scale(1.3);
+}
+
+.card-body {
+    min-height: 180px;
+    position: relative;
+    display: block;
+
+}
+
+.card-title {
+    margin: 15px 0px;
+}
+
+.card-btn {
+    text-decoration: none;
+    font-weight: bold;
+    color: #EEEEEE;
+    font-size: 12px;
+    padding: 3px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-btn:hover {
+    color: #0d6efd;
+}
+
+.btn-primary {
+    float: right;
+    border-radius: 5px;
+    border: 2px solid #0d6efd;
+    padding: 0;
+    transition: .2s ease-in-out;
+}
+
+.btn-primary:hover {
+    background: #EEEEEE;
+    color: #0d6efd;
+    transition: .2s ease-in-out;
+}
+
+span {
+    position: relative;
+    bottom: 0;
+}
+
+button {
+    margin-left: 10px;
+}
+
+.single-pdf-btn {
+    width: 52px;
+}
+
+@media screen and (max-width: 577px) {
+    .card {
+        width: 90%;
+        max-width: 350px;
+        margin: 10px auto;
+    }
+}
+
+
+
