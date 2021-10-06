@@ -48,10 +48,10 @@ $(document).ready(function() {
                 )
             )
         );
-        $(".display-4").on('click', () => {
-            $(".jumbotron-container").removeClass('jumbotron-full');
-            $(".row").append(newCard);
-        });
-        // $(".row").append(newCard);
+        // $(".display-4").on('click', () => {
+        //     $(".jumbotron-container").removeClass('jumbotron-full');
+        //     $(".row").append(newCard);
+        // });
+        $(".row").append(newCard);
     });
 });
