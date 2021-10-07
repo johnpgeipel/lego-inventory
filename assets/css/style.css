@@ -1,6 +1,7 @@
 .jumbotron {
     background: #ffcf00;
-    color: #EEEEEE;
+    /* color: #EEEEEE; */
+    color: #000000;
     margin-bottom: 20px;
     height: 100%;
     transition: height 2s, transform .5s, ease-in-out;
@@ -12,9 +13,16 @@
 } */
 
 .jumbotron-container {
+    height: 75px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.header-logo {
+    width: 40px;
+    height:auto;
+    margin: 10px;
 }
 
 .display-4 {
@@ -34,7 +42,7 @@
 .img-container {
     height: 175px;
     display: flex;
-    padding: 20px;
+    padding: 10px;
     overflow: hidden;
 }
 
@@ -54,8 +62,18 @@
     display: block;
 }
 
+.card-id {
+    transform: translateY(5px);
+    float: right;
+}
+
+.card-title-container {
+    height: 75px;
+    padding-top: 15px;
+}
+
 .card-title {
-    margin: 15px 0px;
+    /* margin: 15px 0px; */
 }
 
 .card-btn {
@@ -106,7 +124,25 @@ button {
         max-width: 350px;
         margin: 10px auto;
     }
+
+    .card-title {
+        font-size: 25px;
+    }
 }
+
+.smart-scroll{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+  }
+  .scrolled-down{
+     transform:translateY(-100%); transition: all 0.3s ease-in-out;
+  }
+  .scrolled-up{
+     transform:translateY(0); transition: all 0.3s ease-in-out;
+  }
 
 
 

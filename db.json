@@ -190,13 +190,13 @@
         "pdfTwo": ""
     },
     {
-        "setId": "",
-        "name": "",
-        "pieces": "",
-        "imgUrl": "",
-        "theme": "",
-        "themeLogo": "",
-        "pdfOne": "",
+        "setId": "76201",
+        "name": "Captain Carter & The Hydra Stomper",
+        "pieces": "343",
+        "imgUrl": "https://www.lego.com/cdn/cs/set/assets/blt51facd580a3531aa/76201_alt2.png?fit=bounds&format=webply&quality=80&width=528&height=528&dpr=1.5",
+        "theme": "Marvel",
+        "themeLogo": "https://www.lego.com/cdn/cs/set/assets/bltdd909357fcaf0a02/Marvel.png?format=png&height=60&dpr=1",
+        "pdfOne": "https://www.lego.com/cdn/product-assets/product.bi.core.pdf/6380737.pdf",
         "pdfTwo": ""
     }
 ]

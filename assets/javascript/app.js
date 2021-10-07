@@ -28,13 +28,14 @@ $(document).ready(function() {
         var newCard = $("<div class='col-lg-4 col-md-6 col-sm-6 col-12'>").append(
             $("<div class='card'>").append(
                 $("<div class='img-container'>").append(
-                    $("<img class='card-img-top' loading='lazy' alt='item image'>").attr("src", img)
+                    $("<img class='card-img-top' loading='lazy' alt=" + setName + ">").attr("src", img)
                 ),
                 $("<div class='card-body'>").append(
-                    $("<h6 style='float: right;'>").text(setId),
+                    $("<h6 class='card-id'>").text(setId),
                     $("<img class='theme-logo' alt='theme logo'>").attr("src", themeLogo),
-                    
-                    $("<h5 class='card-title'>").text(setName),
+                    $("<div class='card-title-container'>").append(
+                    $("<h5 class='card-title'>").text(setName)
+                    ),
                     $("<hr>"),
                     $("<span>").text("Pieces: " + pieces),
                     pdfTwo ? $("<button class='btn-primary'>").append(
@@ -54,4 +55,22 @@ $(document).ready(function() {
         // });
         $(".row").append(newCard);
     });
+
+    // add padding top to show content behind navbar
+    $('body').css('padding-top', $('.navbar').outerHeight() + 'px');
+
+    // detect scroll top or down
+    if ($('.smart-scroll').length > 0) { // check if element exists
+        var last_scroll_top = 0;
+        $(window).on('scroll', function() {
+            scroll_top = $(this).scrollTop();
+            if(scroll_top < last_scroll_top) {
+                $('.smart-scroll').removeClass('scrolled-down').addClass('scrolled-up');
+            }
+            else {
+                $('.smart-scroll').removeClass('scrolled-up').addClass('scrolled-down');
+            }
+            last_scroll_top = scroll_top;
+        });
+    }
 });
