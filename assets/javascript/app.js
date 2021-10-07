@@ -28,7 +28,7 @@ $(document).ready(function() {
         var newCard = $("<div class='col-lg-4 col-md-6 col-sm-6 col-12'>").append(
             $("<div class='card'>").append(
                 $("<div class='img-container'>").append(
-                    $("<img class='card-img-top' loading='lazy' alt=" + setName + ">").attr("src", img)
+                    $("<img class='card-img-top' loading='lazy' alt='" + setName + "'>").attr("src", img)
                 ),
                 $("<div class='card-body'>").append(
                     $("<h6 class='card-id'>").text(setId),
@@ -39,12 +39,12 @@ $(document).ready(function() {
                     $("<hr>"),
                     $("<span>").text("Pieces: " + pieces),
                     pdfTwo ? $("<button class='btn-primary'>").append(
-                        $("<a  class='card-btn'>").attr("href", pdfTwo).attr("target", "_blank").text("PDF 2"),
+                        $("<a  class='card-btn'>").attr("href", pdfTwo).attr("target", "_blank").attr("rel", "noopener").text("PDF 2"),
                     ) : '',
                     $("<button class='btn-primary'>").append(
                         !pdfTwo ?
                         $("<a  class='card-btn single-pdf-btn'>").attr("href", pdfOne).attr("target", "_blank").text("PDF") :
-                        $("<a  class='card-btn'>").attr("href", pdfOne).attr("target", "_blank").text("PDF 1")
+                        $("<a  class='card-btn'>").attr("href", pdfOne).attr("target", "_blank").attr("rel", "noopener").text("PDF 1")
                     )
                 )
             )
