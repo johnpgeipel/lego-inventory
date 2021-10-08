@@ -25,6 +25,15 @@
     margin: 10px;
 }
 
+.form-container {
+    padding: 12px 0px;
+}
+
+.form-select {
+    max-width: 350px;
+    margin: 0 auto;
+}
+
 .display-4 {
     display: flex;
     cursor: pointer;

@@ -14,7 +14,6 @@ var database = firebase.database();
 
 $(document).ready(function() {
     database.ref().on('child_added', function(childsnapshot) {
-        console.log(childsnapshot.val());
     
         var setId = childsnapshot.val().setId;
         var setName = childsnapshot.val().name;
@@ -49,12 +48,62 @@ $(document).ready(function() {
                 )
             )
         );
-        // $(".display-4").on('click', () => {
-        //     $(".jumbotron-container").removeClass('jumbotron-full');
-        //     $(".row").append(newCard);
-        // });
         $(".row").append(newCard);
     });
+
+    var arr;
+    var starArr = [];
+    var marvelArr = [];
+    var idArr = [];
+
+    database.ref().on("value", function(snapshot) {
+        arr = snapshot.val();
+        // console.log(arr);
+        for (var i = 0; i<arr.length; i++) {
+            // console.log(arr[i])
+            var item = arr[i];
+            item.theme === "Star Wars" ? starArr.push(item) : marvelArr.push(item);
+            item.setId ? idArr.push(item.setId) : '';
+        }
+
+        console.log(starArr);
+        // console.log(marvelArr);
+
+        const formOptions = ( arr ) => {
+            var sortArr = [];
+
+            arr.forEach(function(item) {
+                sortArr.push(item.name);
+                sortArr.sort();
+            })
+
+            $("#form-select-name").append(
+                $("<option unselectable='true'>").text(" "),
+                $("<option unselectable='true'>").text(arr[0].theme).attr("style", "font-weight: bold; font-size: 1rem;")
+            )
+            
+            sortArr.forEach(function(item, index) {
+                $("#form-select-name").append(
+                    $("<option value='" + index + "'>").text(item)
+                )
+            })
+        }
+
+        const sortId = ( arr ) => {
+            arr.sort(function(a, b) {return a-b});
+
+            arr.forEach(function(item) {
+                // console.log(item);
+                $("#form-select-id").append(
+                    $("<option value='" + item + "'>").text(item)
+                )
+            })
+        }
+
+        formOptions(marvelArr);
+        formOptions(starArr);
+        sortId(idArr);
+    })
 
     // add padding top to show content behind navbar
     $('body').css('padding-top', $('.navbar').outerHeight() + 'px');
