@@ -78,8 +78,9 @@ $(document).ready(function() {
             })
 
             $("#form-select-name").append(
-                $("<option unselectable='true'>").text(" "),
-                $("<option unselectable='true'>").text(arr[0].theme).attr("style", "font-weight: bold; font-size: 1rem;")
+                $("<option disabled unselectable='true'>").text(" "),
+                $("<option disabled unselectable='true'>").text(arr[0].theme).attr("style", "font-weight: bold; font-size: 1rem;"),
+                $("<option value='" + arr[0].theme + "'>").text("All " + arr[0].theme + " Sets"),
             )
             
             sortArr.forEach(function(item, index) {
