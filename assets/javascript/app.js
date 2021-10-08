@@ -42,7 +42,7 @@ $(document).ready(function() {
                     ) : '',
                     $("<button class='btn-primary'>").append(
                         !pdfTwo ?
-                        $("<a  class='card-btn single-pdf-btn'>").attr("href", pdfOne).attr("target", "_blank").text("PDF") :
+                        $("<a  class='card-btn single-pdf-btn'>").attr("href", pdfOne).attr("target", "_blank").attr("rel", "noopener").text("PDF") :
                         $("<a  class='card-btn'>").attr("href", pdfOne).attr("target", "_blank").attr("rel", "noopener").text("PDF 1")
                     )
                 )
