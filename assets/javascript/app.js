@@ -54,6 +54,7 @@ $(document).ready(function() {
     var arr;
     var starArr = [];
     var marvelArr = [];
+    var technicArr = [];
     var idArr = [];
 
     database.ref().on("value", function(snapshot) {
@@ -62,7 +63,7 @@ $(document).ready(function() {
         for (var i = 0; i<arr.length; i++) {
             // console.log(arr[i])
             var item = arr[i];
-            item.theme === "Star Wars" ? starArr.push(item) : marvelArr.push(item);
+            item.theme === "Star Wars" ? starArr.push(item) : item.theme === "Marvel" ? marvelArr.push(item) : technicArr.push(item);
             item.setId ? idArr.push(item.setId) : '';
         }
 
@@ -106,6 +107,7 @@ $(document).ready(function() {
 
         formOptions(marvelArr);
         formOptions(starArr);
+        formOptions(technicArr);
         sortId(idArr);
     })
 

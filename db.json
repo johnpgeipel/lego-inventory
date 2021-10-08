@@ -198,5 +198,15 @@
         "themeLogo": "https://www.lego.com/cdn/cs/set/assets/bltdd909357fcaf0a02/Marvel.png?format=png&height=60&dpr=1",
         "pdfOne": "https://www.lego.com/cdn/product-assets/product.bi.core.pdf/6380737.pdf",
         "pdfTwo": ""
+    },
+    {
+        "setId": "42122",
+        "name": "Jeep® Wrangler",
+        "pieces": "665",
+        "imgUrl": "https://www.lego.com/cdn/cs/set/assets/blt5ca8d7adce06a3a4/42122.jpg?fit=bounds&format=webply&quality=80&width=528&height=528&dpr=1.5",
+        "theme": "Technic",
+        "themeLogo": "https://www.lego.com/cdn/cs/set/assets/blt76e937a89531c42c/technic_logo_pos_100h.png?format=png&height=40&dpr=1",
+        "pdfOne": "https://www.lego.com/cdn/product-assets/product.bi.core.pdf/6364779.pdf",
+        "pdfTwo": ""
     }
 ]
