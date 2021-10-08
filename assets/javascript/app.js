@@ -70,12 +70,15 @@ $(document).ready(function() {
         // console.log(marvelArr);
 
         const formOptions = ( arr ) => {
-            var sortArr = [];
+            // var sortArr = [];
 
-            arr.forEach(function(item) {
-                sortArr.push(item.name);
-                sortArr.sort();
-            })
+            // arr.forEach(function(item) {
+            //     sortArr.push(item.name);
+            //     sortArr.sort();
+            // })
+
+            arr.sort((a, b) => (a.name > b.name) ? 1 : -1)
+            console.log(arr)
 
             $("#form-select-name").append(
                 $("<option disabled unselectable='true'>").text(" "),
@@ -83,9 +86,9 @@ $(document).ready(function() {
                 $("<option value='" + arr[0].theme + "'>").text("All " + arr[0].theme + " Sets"),
             )
             
-            sortArr.forEach(function(item, index) {
+            arr.forEach(function(item) {
                 $("#form-select-name").append(
-                    $("<option value='" + index + "'>").text(item)
+                    $("<option value='" + item.setId + "'>").text(item.name)
                 )
             })
         }
