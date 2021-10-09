@@ -67,7 +67,9 @@ $(document).ready(function() {
             item.setId ? idArr.push(item.setId) : '';
         }
 
-        console.log(starArr);
+        
+
+        // console.log(starArr);
         // console.log(marvelArr);
 
         const formOptions = ( arr ) => {
@@ -94,6 +96,7 @@ $(document).ready(function() {
             })
         }
 
+        // sorts setId for ID select form
         const sortId = ( arr ) => {
             arr.sort(function(a, b) {return a-b});
 
@@ -109,7 +112,9 @@ $(document).ready(function() {
         formOptions(starArr);
         formOptions(technicArr);
         sortId(idArr);
-    })
+    }, function(error) {
+        console.log("Error: " + error.code)
+    });
 
     // add padding top to show content behind navbar
     $('body').css('padding-top', $('.navbar').outerHeight() + 'px');
