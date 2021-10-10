@@ -229,5 +229,49 @@
         "themeLogo": "https://www.lego.com/cdn/cs/set/assets/blt76e937a89531c42c/technic_logo_pos_100h.png?format=png&height=40&dpr=1",
         "pdfOne": "https://www.lego.com/cdn/product-assets/product.bi.core.pdf/6364779.pdf",
         "pdfTwo": ""
+    },
+    {
+        "setId": "31107",
+        "name": "Space Rover Explorer",
+        "pieces": "510",
+        "imgUrl": "https://www.lego.com/cdn/cs/set/assets/blt7400a500c110cee2/31107.jpg?fit=bounds&format=webply&quality=80&width=528&height=528&dpr=1.5",
+        "theme": "Creator 3 in 1",
+        "array": "creatorArr",
+        "themeLogo": "https://www.lego.com/cdn/cs/set/assets/blt53e5eeb1dac31640/creator3in1_logo_pos_100h.png?format=png&height=40&dpr=1",
+        "pdfOne": "https://www.lego.com/cdn/cs/set/assets/blt7400a500c110cee2/31107.jpg?fit=bounds&format=webply&quality=80&width=528&height=528&dpr=1.5",
+        "pdfTwo": ""
+    },
+    {
+        "setId": "31088",
+        "name": "Deep Sea Creatures",
+        "pieces": "230",
+        "imgUrl": "https://www.lego.com/cdn/cs/set/assets/bltc691d8d0172af5f1/31088.jpg?fit=bounds&format=webply&quality=80&width=528&height=528&dpr=1.5",
+        "theme": "Creator 3 in 1",
+        "array": "creatorArr",
+        "themeLogo": "https://www.lego.com/cdn/cs/set/assets/blt53e5eeb1dac31640/creator3in1_logo_pos_100h.png?format=png&height=40&dpr=1",
+        "pdfOne": "https://www.lego.com/cdn/product-assets/product.bi.core.pdf/6263589.pdf",
+        "pdfTwo": "https://www.lego.com/cdn/product-assets/product.bi.core.pdf/6263590.pdf"
+    },
+    {
+        "setId": "31112",
+        "name": "Wild Lion",
+        "pieces": "224",
+        "imgUrl": "https://www.lego.com/cdn/cs/set/assets/blt5d05a1802f79d93a/31112.jpg?fit=bounds&format=webply&quality=80&width=528&height=528&dpr=1.5",
+        "theme": "Creator 3 in 1",
+        "array": "creatorArr",
+        "themeLogo": "https://www.lego.com/cdn/cs/set/assets/blt53e5eeb1dac31640/creator3in1_logo_pos_100h.png?format=png&height=40&dpr=1",
+        "pdfOne": "https://www.lego.com/cdn/product-assets/product.bi.core.pdf/6351405.pdf",
+        "pdfTwo": "https://www.lego.com/cdn/product-assets/product.bi.core.pdf/6351409.pdf"
+    },
+    {
+        "setId": "75532",
+        "name": "Scout Trooper™ & Speeder Bike™",
+        "pieces": "452",
+        "imgUrl": "https://www.lego.com/cdn/cs/set/assets/bltaf70b0f1aded8d34/75532.jpg?fit=bounds&format=webply&quality=80&width=528&height=528&dpr=1.5",
+        "theme": "Star Wars",
+        "array": "starArr",
+        "themeLogo": "https://www.lego.com/cdn/cs/set/assets/bltc55693f0b8cc3375/starWars_logo_pos_300w.png?format=png&height=40&dpr=1",
+        "pdfOne": "https://www.lego.com/cdn/product-assets/product.bi.core.pdf/6218871.pdf",
+        "pdfTwo": "https://www.lego.com/cdn/product-assets/product.bi.core.pdf/6199516.pdf"
     }
 ]

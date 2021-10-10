@@ -17,6 +17,7 @@ $(document).ready(function() {
     var starArr = [];
     var marvelArr = [];
     var technicArr = [];
+    var creatorArr = [];
     var idArr = [];
 
     database.ref().on("value", function(snapshot) {
@@ -24,7 +25,10 @@ $(document).ready(function() {
         // sorts objects into seperate arrays
         for (var i = 0; i < arr.length; i++) {
             var item = arr[i];
-            item.array === "starArr" ? starArr.push(item) : item.array === "marvelArr" ? marvelArr.push(item) : technicArr.push(item);
+            item.array === "starArr" ? starArr.push(item) :
+            item.array === "marvelArr" ? marvelArr.push(item) :
+            item.array === "creatorArr" ? creatorArr.push(item) :
+            technicArr.push(item);
             item.setId ? idArr.push(item.setId) : '';
         }
 
@@ -114,6 +118,7 @@ $(document).ready(function() {
             inputName === "starArr" ? setArr = starArr :
             inputName === "marvelArr" ? setArr = marvelArr :
             inputName === "technicArr" ? setArr = technicArr :
+            inputName === "creatorArr" ? setArr = creatorArr :
             inputName === "arr" ? setArr = arr : "";
 
             !isNaN(parseInt(inputName)) ?
@@ -169,6 +174,7 @@ $(document).ready(function() {
         })
 
         // populates select forms
+        formOptions(creatorArr);
         formOptions(marvelArr);
         formOptions(starArr);
         formOptions(technicArr);
@@ -180,21 +186,5 @@ $(document).ready(function() {
 
     // ----------------- navBar js -----------------
     // add padding top to show content behind navbar
-    $('body').css('padding-top', $('.navbar').outerHeight() + 'px');
-
-    // detect scroll top or down
-    if ($('.smart-scroll').length > 0) { // check if element exists
-        var last_scroll_top = 0;
-        $(window).on('scroll', function() {
-            scroll_top = $(this).scrollTop();
-            if(scroll_top < last_scroll_top) {
-                $('.smart-scroll').removeClass('scrolled-down').addClass('scrolled-up');
-            }
-            else {
-                $('.smart-scroll').removeClass('scrolled-up').addClass('scrolled-down');
-            }
-            last_scroll_top = scroll_top;
-        });
-    }
-    // ----------------- end of navBar js -----------------
+    // $('body').css('padding-top', $('.navbar').outerHeight() + 'px');
 });

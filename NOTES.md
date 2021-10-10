@@ -11,6 +11,7 @@
     "pieces": "",
     "imgUrl": "",
     "theme": "",
+    "array": "",
     "themeLogo": "",
     "pdfOne": "",
     "pdfTwo": ""
