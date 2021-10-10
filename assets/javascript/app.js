@@ -13,47 +13,7 @@ firebase.initializeApp(firebaseConfig);
 var database = firebase.database();
 
 $(document).ready(function() {
-    // database.ref().on('child_added', function(childsnapshot) {
-    
-    //     var setId = childsnapshot.val().setId;
-    //     var setName = childsnapshot.val().name;
-    //     var pieces = childsnapshot.val().pieces;
-    //     var img = childsnapshot.val().imgUrl;
-    //     // var theme = childsnapshot.val().theme;
-    //     // var array = childsnapshot.val().array;
-    //     var themeLogo = childsnapshot.val().themeLogo;
-    //     var pdfOne = childsnapshot.val().pdfOne;
-    //     var pdfTwo = childsnapshot.val().pdfTwo;
-
-    //     var newCard = $("<div class='col-lg-4 col-md-6 col-sm-6 col-12'>").append(
-    //         $("<div class='card'>").append(
-    //             $("<div class='img-container'>").append(
-    //                 $("<img class='card-img-top' loading='lazy' alt='" + setName + "'>").attr("src", img)
-    //             ),
-    //             $("<div class='card-body'>").append(
-    //                 $("<h6 class='card-id'>").text(setId),
-    //                 $("<img class='theme-logo' alt='theme logo'>").attr("src", themeLogo),
-    //                 $("<div class='card-title-container'>").append(
-    //                 $("<h5 class='card-title'>").text(setName)
-    //                 ),
-    //                 $("<hr>"),
-    //                 $("<span>").text("Pieces: " + pieces),
-    //                 pdfTwo ? $("<button class='btn-primary'>").append(
-    //                     $("<a  class='card-btn'>").attr("href", pdfTwo).attr("target", "_blank").attr("rel", "noopener").text("PDF 2"),
-    //                 ) : '',
-    //                 $("<button class='btn-primary'>").append(
-    //                     !pdfTwo ?
-    //                     $("<a  class='card-btn single-pdf-btn'>").attr("href", pdfOne).attr("target", "_blank").attr("rel", "noopener").text("PDF") :
-    //                     $("<a  class='card-btn'>").attr("href", pdfOne).attr("target", "_blank").attr("rel", "noopener").text("PDF 1")
-    //                 )
-    //             )
-    //         )
-    //     );
-    //     $(".row").append(newCard);
-    // });
-
     var arr;
-    // var res;
     var starArr = [];
     var marvelArr = [];
     var technicArr = [];
@@ -61,7 +21,7 @@ $(document).ready(function() {
 
     database.ref().on("value", function(snapshot) {
         arr = snapshot.val();
-
+        // sorts objects into seperate arrays
         for (var i = 0; i < arr.length; i++) {
             var item = arr[i];
             item.array === "starArr" ? starArr.push(item) : item.array === "marvelArr" ? marvelArr.push(item) : technicArr.push(item);
@@ -99,7 +59,13 @@ $(document).ready(function() {
             })
         }
 
+        const setColumn = ( arr ) => {
+            // var column = $(".col-card");
+            
+        }
+        // single card creation
         const newCard = ( data ) => {
+            
             const card =
             $("<div class='card-col col-lg-4 col-md-6 col-sm-6 col-12'>").append(
             $("<div class='card'>").append(
@@ -114,26 +80,29 @@ $(document).ready(function() {
                     ),
                     $("<hr>"),
                     $("<span>").text("Pieces: " + data.pieces),
-                    data.pdfTwo ? $("<button class='btn-primary'>").append(
+                    data.pdfTwo ? $("<button class='btn-danger'>").append(
                         $("<a  class='card-btn'>").attr("href", data.pdfTwo).attr("target", "_blank").attr("rel", "noopener").text("PDF 2"),
                     ) : '',
-                    $("<button class='btn-primary'>").append(
+                    $("<button class='btn-danger'>").append(
                         !data.pdfTwo ?
                         $("<a  class='card-btn single-pdf-btn'>").attr("href", data.pdfOne).attr("target", "_blank").attr("rel", "noopener").text("PDF") :
                         $("<a  class='card-btn'>").attr("href", data.pdfOne).attr("target", "_blank").attr("rel", "noopener").text("PDF 1")
                     )
                 )
             )
-        )
-        $(".row").append(card);
-    };
+            )
+            $(".row").append(card);
+            
 
+        };
+        // multiple card creation
         const newCards = ( item ) => {
             item.forEach( data => {
                 newCard(data);
             });
         };
 
+        // name select form logic
         $("#form-select-name").on("change", () => {
             var inputName = $("#form-select-name option:selected").val();
             var setArr;
@@ -158,12 +127,18 @@ $(document).ready(function() {
                 
             console.log(setArr);
             
+            $("body").css("background", "#EEEEEE").css("transition", "background .4s ease");
+
             !isNaN(parseInt(setArr)) ?
             newCard(setArr) :
             newCards(setArr);
 
-        })
+            console.log(setArr.length)
 
+            setArr.length === 1 ? $(".card-col").addClass("card-col-one") :
+            setArr.length > 1 ? $(".card-col").removeClass("card-col-one") : "";
+        })
+        // id select form logic
         $("#form-select-id").on("change", () => {
             var inputId = $("#form-select-id option:selected").val();
             var setArr;
@@ -177,13 +152,20 @@ $(document).ready(function() {
                     // console.log((item.setId === inputId) && item.setId);
                     return item.setId === inputId;
                 })
-            ) : "";
+            ) : setArr = arr;
 
             console.log(setArr);
-
+            $("body").css("background", "#EEEEEE").css("transition", "background .4s ease");
+            
             !isNaN(parseInt(setArr)) ?
             newCard(setArr) :
             newCards(setArr);
+
+            console.log(setArr.length)
+
+
+            setArr.length === 1 ? $(".card-col").addClass("card-col-one") :
+            setArr.length > 1 ? $(".card-col").removeClass("card-col-one") : "";
         })
 
         // populates select forms
@@ -195,8 +177,6 @@ $(document).ready(function() {
     }, function(error) {
         console.log("Error: " + error.code)
     });
-
-    
 
     // ----------------- navBar js -----------------
     // add padding top to show content behind navbar
@@ -217,5 +197,4 @@ $(document).ready(function() {
         });
     }
     // ----------------- end of navBar js -----------------
-
 });

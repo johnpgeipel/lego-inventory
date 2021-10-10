@@ -1,8 +1,17 @@
+/* #d01012 */
+
+/* gold #ffcf00 */
+
+body {
+    background: #ffcf00;
+}
+
 .jumbotron {
     background: #ffcf00;
     /* color: #EEEEEE; */
     color: #000000;
     margin-bottom: 20px;
+    padding-top: 30px;
     height: 100%;
     transition: height 2s, transform .5s, ease-in-out;
 }
@@ -31,7 +40,7 @@
 
 .form-select {
     max-width: 350px;
-    margin: 0 auto;
+    margin: 10px auto;
 }
 
 .display-4 {
@@ -44,6 +53,17 @@
     box-shadow: 0px 2px 7px #6e6e6e49;
     margin-bottom: 15px;
 }
+
+.card-col-one {
+    margin: 0 auto;
+    width: 60%;
+    max-width: 500px;
+}
+
+.card-col-two {
+    /* background: chocolate; */
+}
+
 .theme-logo {
     width: 50px;
 }
@@ -81,10 +101,6 @@
     padding-top: 15px;
 }
 
-.card-title {
-    /* margin: 15px 0px; */
-}
-
 .card-btn {
     text-decoration: none;
     font-weight: bold;
@@ -97,20 +113,23 @@
 }
 
 .card-btn:hover {
-    color: #0d6efd;
+    /* color: #0d6efd; */
+    color: #d01012;
 }
 
-.btn-primary {
+.btn-danger {
     float: right;
     border-radius: 5px;
-    border: 2px solid #0d6efd;
+    /* border: 2px solid #0d6efd; */
+    border: 2px solid #d01012;
     padding: 0;
     transition: .2s ease-in-out;
 }
 
-.btn-primary:hover {
+.btn-danger:hover {
     background: #EEEEEE;
-    color: #0d6efd;
+    /* color: #0d6efd; */
+    color: #d01012;
     transition: .2s ease-in-out;
 }
 
@@ -128,14 +147,14 @@ button {
 }
 
 @media screen and (max-width: 577px) {
-    .card {
+    .card-title {
+        font-size: 25px;
+    }
+
+    .card-col-one {
         width: 90%;
         max-width: 350px;
         margin: 10px auto;
-    }
-
-    .card-title {
-        font-size: 25px;
     }
 }
 
