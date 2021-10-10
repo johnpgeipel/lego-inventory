@@ -53,6 +53,7 @@ $(document).ready(function() {
     // });
 
     var arr;
+    // var res;
     var starArr = [];
     var marvelArr = [];
     var technicArr = [];
@@ -61,7 +62,7 @@ $(document).ready(function() {
     database.ref().on("value", function(snapshot) {
         arr = snapshot.val();
 
-        for (var i = 0; i<arr.length; i++) {
+        for (var i = 0; i < arr.length; i++) {
             var item = arr[i];
             item.array === "starArr" ? starArr.push(item) : item.array === "marvelArr" ? marvelArr.push(item) : technicArr.push(item);
             item.setId ? idArr.push(item.setId) : '';
@@ -128,55 +129,61 @@ $(document).ready(function() {
     };
 
         const newCards = ( item ) => {
-
             item.forEach( data => {
                 newCard(data);
-
-                
-                // var newCard = $("<div class='card-col col-lg-4 col-md-6 col-sm-6 col-12'>").append(
-                //     $("<div class='card'>").append(
-                //         $("<div class='img-container'>").append(
-                //             $("<img class='card-img-top' loading='lazy' alt='" + data.name + "'>").attr("src", data.imgUrl)
-                //         ),
-                //         $("<div class='card-body'>").append(
-                //             $("<h6 class='card-id'>").text(data.setId),
-                //             $("<img class='theme-logo' alt='theme logo'>").attr("src", data.themeLogo),
-                //             $("<div class='card-title-container'>").append(
-                //             $("<h5 class='card-title'>").text(data.name)
-                //             ),
-                //             $("<hr>"),
-                //             $("<span>").text("Pieces: " + data.pieces),
-                //             data.pdfTwo ? $("<button class='btn-primary'>").append(
-                //                 $("<a  class='card-btn'>").attr("href", data.pdfTwo).attr("target", "_blank").attr("rel", "noopener").text("PDF 2"),
-                //             ) : '',
-                //             $("<button class='btn-primary'>").append(
-                //                 !data.pdfTwo ?
-                //                 $("<a  class='card-btn single-pdf-btn'>").attr("href", data.pdfOne).attr("target", "_blank").attr("rel", "noopener").text("PDF") :
-                //                 $("<a  class='card-btn'>").attr("href", data.pdfOne).attr("target", "_blank").attr("rel", "noopener").text("PDF 1")
-                //             )
-                //         )
-                //     )
-                // )
-                // $(".row").append(newCard);
-            })
-        }
+            });
+        };
 
         $("#form-select-name").on("change", () => {
             var inputName = $("#form-select-name option:selected").val();
             var setArr;
             console.log(inputName);
+
             $(".card-col").remove();
+
+            isNaN(inputName) &&
             inputName === "starArr" ? setArr = starArr :
             inputName === "marvelArr" ? setArr = marvelArr :
             inputName === "technicArr" ? setArr = technicArr :
             inputName === "arr" ? setArr = arr : "";
+
+            !isNaN(parseInt(inputName)) ?
+            setArr = (
+                arr.filter( item => {
+                    console.log((item.setId === inputName) && item.setId);
+                    return item.setId === inputName;
+                    
+                })
+            ) : "";
+                
+            console.log(setArr);
+            
+            !isNaN(parseInt(setArr)) ?
+            newCard(setArr) :
             newCards(setArr);
 
         })
 
         $("#form-select-id").on("change", () => {
             var inputId = $("#form-select-id option:selected").val();
+            var setArr;
             console.log(inputId);
+
+            $(".card-col").remove();
+
+            !isNaN(parseInt(inputId)) ?
+            setArr = (
+                arr.filter( item => {
+                    // console.log((item.setId === inputId) && item.setId);
+                    return item.setId === inputId;
+                })
+            ) : "";
+
+            console.log(setArr);
+
+            !isNaN(parseInt(setArr)) ?
+            newCard(setArr) :
+            newCards(setArr);
         })
 
         // populates select forms
