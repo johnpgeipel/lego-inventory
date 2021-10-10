@@ -5,6 +5,7 @@
         "pieces": "1267",
         "imgUrl": "https://www.lego.com/cdn/cs/set/assets/blt7dc15f12b7f8c85f/75288.jpg?fit=bounds&format=webply&quality=80&width=528&height=528&dpr=1.5",
         "theme": "Star Wars",
+        "array": "starArr",
         "themeLogo": "https://www.lego.com/cdn/cs/set/assets/bltc55693f0b8cc3375/starWars_logo_pos_300w.png?format=png&height=40&dpr=1",
         "pdfOne": "https://www.lego.com/cdn/product-assets/product.bi.core.pdf/6330126.pdf",
         "pdfTwo": ""
@@ -15,6 +16,7 @@
         "pieces": "840",
         "imgUrl": "https://www.lego.com/cdn/cs/set/assets/blt5b2a5ddc7f86af45/76126.jpg?fit=bounds&format=webply&quality=80&width=528&height=528&dpr=1.5",
         "theme": "Marvel",
+        "array": "marvelArr",
         "themeLogo": "https://www.lego.com/cdn/cs/set/assets/bltdd909357fcaf0a02/Marvel.png?format=png&height=60&dpr=1",
         "pdfOne": "https://www.lego.com/cdn/product-assets/product.bi.core.pdf/6272034.pdf",
         "pdfTwo": ""
@@ -25,6 +27,7 @@
         "pieces": "195",
         "imgUrl": "https://www.lego.com/cdn/cs/set/assets/blt97b283d9f52d345f/76200.jpg?fit=bounds&format=webply&quality=80&width=528&height=528&dpr=1.5",
         "theme": "Marvel",
+        "array": "marvelArr",
         "themeLogo": "https://www.lego.com/cdn/cs/set/assets/bltdd909357fcaf0a02/Marvel.png?format=png&height=60&dpr=1",
         "pdfOne": "https://www.lego.com/cdn/product-assets/product.bi.core.pdf/6380108.pdf",
         "pdfTwo": ""
@@ -35,6 +38,7 @@
         "pieces": "1353",
         "imgUrl": "https://www.lego.com/cdn/cs/set/assets/blt892f38a4fd55edeb/75257.jpg?fit=bounds&format=webply&quality=80&width=528&height=528&dpr=1.5",
         "theme": "Star Wars",
+        "array": "starArr",
         "themeLogo": "https://www.lego.com/cdn/cs/set/assets/bltc55693f0b8cc3375/starWars_logo_pos_300w.png?format=png&height=40&dpr=1",
         "pdfOne": "https://www.lego.com/cdn/product-assets/product.bi.core.pdf/6296457.pdf",
         "pdfTwo": ""
@@ -45,6 +49,7 @@
         "pieces": "1023",
         "imgUrl": "https://www.lego.com/cdn/cs/set/assets/blt7a4292faec34e557/75292.png?fit=bounds&format=webply&quality=80&width=528&height=528&dpr=1.5",
         "theme": "Star Wars",
+        "array": "starArr",
         "themeLogo": "https://www.lego.com/cdn/cs/set/assets/bltc55693f0b8cc3375/starWars_logo_pos_300w.png?format=png&height=40&dpr=1",
         "pdfOne": "https://www.lego.com/cdn/product-assets/product.bi.core.pdf/6332509.pdf",
         "pdfTwo": ""
@@ -55,6 +60,7 @@
         "pieces": "761",
         "imgUrl": "https://www.lego.com/cdn/cs/set/assets/blt9d411c8fcf66d68c/75273.jpg?fit=bounds&format=webply&quality=80&width=528&height=528&dpr=1.5",
         "theme": "Star Wars",
+        "array": "starArr",
         "themeLogo": "https://www.lego.com/cdn/cs/set/assets/bltc55693f0b8cc3375/starWars_logo_pos_300w.png?format=png&height=40&dpr=1",
         "pdfOne": "https://www.lego.com/cdn/product-assets/product.bi.core.pdf/6310760.pdf",
         "pdfTwo": ""
@@ -65,6 +71,7 @@
         "pieces": "578",
         "imgUrl": "https://www.lego.com/cdn/cs/set/assets/blt95bbb82fe5e50bd7/75249.jpg?fit=bounds&format=webply&quality=80&width=528&height=528&dpr=1.5",
         "theme": "Star Wars",
+        "array": "starArr",
         "themeLogo": "https://www.lego.com/cdn/cs/set/assets/bltc55693f0b8cc3375/starWars_logo_pos_300w.png?format=png&height=40&dpr=1",
         "pdfOne": "https://www.lego.com/cdn/product-assets/product.bi.core.pdf/6296571.pdf",
         "pdfTwo": ""
@@ -75,6 +82,7 @@
         "pieces": "683",
         "imgUrl": "https://www.lego.com/cdn/cs/set/assets/blt3290b68ac1be98c4/75306.jpg?fit=bounds&format=webply&quality=80&width=528&height=528&dpr=1.5",
         "theme": "Star Wars",
+        "array": "starArr",
         "themeLogo": "https://www.lego.com/cdn/cs/set/assets/bltc55693f0b8cc3375/starWars_logo_pos_300w.png?format=png&height=40&dpr=1",
         "pdfOne": "https://www.lego.com/cdn/product-assets/product.bi.core.pdf/6366003.pdf",
         "pdfTwo": ""
@@ -85,6 +93,7 @@
         "pieces": "540",
         "imgUrl": "https://www.lego.com/cdn/cs/set/assets/blt8f764ff4e9e769ec/75254.jpg?fit=bounds&format=webply&quality=80&width=528&height=528&dpr=1.5",
         "theme": "Star Wars",
+        "array": "starArr",
         "themeLogo": "https://www.lego.com/cdn/cs/set/assets/bltc55693f0b8cc3375/starWars_logo_pos_300w.png?format=png&height=40&dpr=1",
         "pdfOne": "https://www.lego.com/cdn/product-assets/product.bi.core.pdf/6296461.pdf",
         "pdfTwo": ""
@@ -95,6 +104,7 @@
         "pieces": "474",
         "imgUrl": "https://www.lego.com/cdn/cs/set/assets/blte1238e85dc34c0a6/75301.jpg?fit=bounds&format=webply&quality=80&width=528&height=528&dpr=1.5",
         "theme": "Star Wars",
+        "array": "starArr",
         "themeLogo": "https://www.lego.com/cdn/cs/set/assets/bltc55693f0b8cc3375/starWars_logo_pos_300w.png?format=png&height=40&dpr=1",
         "pdfOne": "https://www.lego.com/cdn/product-assets/product.bi.core.pdf/6350588.pdf",
         "pdfTwo": ""
@@ -105,6 +115,7 @@
         "pieces": "432",
         "imgUrl": "https://www.lego.com/cdn/cs/set/assets/blt834c5ddd9d65a669/75300.jpg?fit=bounds&format=webply&quality=80&width=528&height=528&dpr=1.5",
         "theme": "Star Wars",
+        "array": "starArr",
         "themeLogo": "https://www.lego.com/cdn/cs/set/assets/bltc55693f0b8cc3375/starWars_logo_pos_300w.png?format=png&height=40&dpr=1",
         "pdfOne": "https://www.lego.com/cdn/product-assets/product.bi.core.pdf/6352207.pdf",
         "pdfTwo": ""
@@ -115,6 +126,7 @@
         "pieces": "236",
         "imgUrl": "https://www.lego.com/cdn/cs/set/assets/blt749335fc92b5dde5/75271.jpg?fit=bounds&format=webply&quality=80&width=528&height=528&dpr=1.5",
         "theme": "Star Wars",
+        "array": "starArr",
         "themeLogo": "https://www.lego.com/cdn/cs/set/assets/bltc55693f0b8cc3375/starWars_logo_pos_300w.png?format=png&height=40&dpr=1",
         "pdfOne": "https://www.lego.com/cdn/product-assets/product.bi.core.pdf/6310848.pdf",
         "pdfTwo": ""
@@ -125,6 +137,7 @@
         "pieces": "276",
         "imgUrl": "https://www.lego.com/cdn/cs/set/assets/blt8f85ab67d88afa2c/75299.jpg?fit=bounds&format=webply&quality=80&width=528&height=528&dpr=1.5",
         "theme": "Star Wars",
+        "array": "starArr",
         "themeLogo": "https://www.lego.com/cdn/cs/set/assets/bltc55693f0b8cc3375/starWars_logo_pos_300w.png?format=png&height=40&dpr=1",
         "pdfOne": "https://www.lego.com/cdn/product-assets/product.bi.core.pdf/6350586.pdf",
         "pdfTwo": ""
@@ -135,6 +148,7 @@
         "pieces": "205",
         "imgUrl": "https://www.lego.com/cdn/cs/set/assets/blt258ef75def4d72a4/75298.jpg?fit=bounds&format=webply&quality=80&width=528&height=528&dpr=1.5",
         "theme": "Star Wars",
+        "array": "starArr",
         "themeLogo": "https://www.lego.com/cdn/cs/set/assets/bltc55693f0b8cc3375/starWars_logo_pos_300w.png?format=png&height=40&dpr=1",
         "pdfOne": "https://www.lego.com/cdn/product-assets/product.bi.core.pdf/6352211.pdf",
         "pdfTwo": "https://www.lego.com/cdn/product-assets/product.bi.core.pdf/6352020.pdf"
@@ -145,6 +159,7 @@
         "pieces": "295",
         "imgUrl": "https://www.lego.com/cdn/cs/set/assets/bltf26654748edaee26/75317.png?fit=bounds&format=webply&quality=80&width=528&height=528&dpr=1.5",
         "theme": "Star Wars",
+        "array": "starArr",
         "themeLogo": "https://www.lego.com/cdn/cs/set/assets/bltc55693f0b8cc3375/starWars_logo_pos_300w.png?format=png&height=40&dpr=1",
         "pdfOne": "https://www.lego.com/cdn/product-assets/product.bi.core.pdf/6334518.pdf",
         "pdfTwo": "https://www.lego.com/cdn/product-assets/product.bi.core.pdf/6334520.pdf"
@@ -155,6 +170,7 @@
         "pieces": "101",
         "imgUrl": "https://www.lego.com/cdn/cs/set/assets/bltb5a2801de6500ffd/75295.jpg?fit=bounds&format=webply&quality=80&width=528&height=528&dpr=1.5",
         "theme": "Star Wars",
+        "array": "starArr",
         "themeLogo": "https://www.lego.com/cdn/cs/set/assets/bltc55693f0b8cc3375/starWars_logo_pos_300w.png?format=png&height=40&dpr=1",
         "pdfOne": "https://www.lego.com/cdn/product-assets/product.bi.core.pdf/6351680.pdf",
         "pdfTwo": ""
@@ -165,6 +181,7 @@
         "pieces": "248",
         "imgUrl": "https://www.lego.com/cdn/cs/set/assets/blt203dd5d020dced3d/75281.jpg?fit=bounds&format=webply&quality=80&width=528&height=528&dpr=1.5",
         "theme": "Star Wars",
+        "array": "starArr",
         "themeLogo": "https://www.lego.com/cdn/cs/set/assets/bltc55693f0b8cc3375/starWars_logo_pos_300w.png?format=png&height=40&dpr=1",
         "pdfOne": "https://www.lego.com/cdn/product-assets/product.bi.core.pdf/6330123.pdf",
         "pdfTwo": ""
@@ -175,6 +192,7 @@
         "pieces": "269",
         "imgUrl": "https://www.lego.com/cdn/cs/set/assets/blt84b3b0caeadeb716/75248.jpg?fit=bounds&format=webply&quality=80&width=528&height=528&dpr=1.5",
         "theme": "Star Wars",
+        "array": "starArr",
         "themeLogo": "https://www.lego.com/cdn/cs/set/assets/bltc55693f0b8cc3375/starWars_logo_pos_300w.png?format=png&height=40&dpr=1",
         "pdfOne": "https://www.lego.com/cdn/product-assets/product.bi.core.pdf/6296589.pdf",
         "pdfTwo": ""
@@ -185,6 +203,7 @@
         "pieces": "263",
         "imgUrl": "https://img.bricklink.com/ItemImage/SN/0/75049-1.png",
         "theme": "Star Wars",
+        "array": "starArr",
         "themeLogo": "https://www.lego.com/cdn/cs/set/assets/bltc55693f0b8cc3375/starWars_logo_pos_300w.png?format=png&height=40&dpr=1",
         "pdfOne": "https://www.lego.com/cdn/product-assets/product.bi.core.pdf/6093676.pdf",
         "pdfTwo": ""
@@ -195,6 +214,7 @@
         "pieces": "343",
         "imgUrl": "https://www.lego.com/cdn/cs/set/assets/blt51facd580a3531aa/76201_alt2.png?fit=bounds&format=webply&quality=80&width=528&height=528&dpr=1.5",
         "theme": "Marvel",
+        "array": "marvelArr",
         "themeLogo": "https://www.lego.com/cdn/cs/set/assets/bltdd909357fcaf0a02/Marvel.png?format=png&height=60&dpr=1",
         "pdfOne": "https://www.lego.com/cdn/product-assets/product.bi.core.pdf/6380737.pdf",
         "pdfTwo": ""
@@ -205,6 +225,7 @@
         "pieces": "665",
         "imgUrl": "https://www.lego.com/cdn/cs/set/assets/blt5ca8d7adce06a3a4/42122.jpg?fit=bounds&format=webply&quality=80&width=528&height=528&dpr=1.5",
         "theme": "Technic",
+        "array": "technicArr",
         "themeLogo": "https://www.lego.com/cdn/cs/set/assets/blt76e937a89531c42c/technic_logo_pos_100h.png?format=png&height=40&dpr=1",
         "pdfOne": "https://www.lego.com/cdn/product-assets/product.bi.core.pdf/6364779.pdf",
         "pdfTwo": ""

@@ -13,43 +13,44 @@ firebase.initializeApp(firebaseConfig);
 var database = firebase.database();
 
 $(document).ready(function() {
-    database.ref().on('child_added', function(childsnapshot) {
+    // database.ref().on('child_added', function(childsnapshot) {
     
-        var setId = childsnapshot.val().setId;
-        var setName = childsnapshot.val().name;
-        var pieces = childsnapshot.val().pieces;
-        var img = childsnapshot.val().imgUrl;
-        var theme = childsnapshot.val().theme;
-        var themeLogo = childsnapshot.val().themeLogo;
-        var pdfOne = childsnapshot.val().pdfOne;
-        var pdfTwo = childsnapshot.val().pdfTwo;
+    //     var setId = childsnapshot.val().setId;
+    //     var setName = childsnapshot.val().name;
+    //     var pieces = childsnapshot.val().pieces;
+    //     var img = childsnapshot.val().imgUrl;
+    //     // var theme = childsnapshot.val().theme;
+    //     // var array = childsnapshot.val().array;
+    //     var themeLogo = childsnapshot.val().themeLogo;
+    //     var pdfOne = childsnapshot.val().pdfOne;
+    //     var pdfTwo = childsnapshot.val().pdfTwo;
 
-        var newCard = $("<div class='col-lg-4 col-md-6 col-sm-6 col-12'>").append(
-            $("<div class='card'>").append(
-                $("<div class='img-container'>").append(
-                    $("<img class='card-img-top' loading='lazy' alt='" + setName + "'>").attr("src", img)
-                ),
-                $("<div class='card-body'>").append(
-                    $("<h6 class='card-id'>").text(setId),
-                    $("<img class='theme-logo' alt='theme logo'>").attr("src", themeLogo),
-                    $("<div class='card-title-container'>").append(
-                    $("<h5 class='card-title'>").text(setName)
-                    ),
-                    $("<hr>"),
-                    $("<span>").text("Pieces: " + pieces),
-                    pdfTwo ? $("<button class='btn-primary'>").append(
-                        $("<a  class='card-btn'>").attr("href", pdfTwo).attr("target", "_blank").attr("rel", "noopener").text("PDF 2"),
-                    ) : '',
-                    $("<button class='btn-primary'>").append(
-                        !pdfTwo ?
-                        $("<a  class='card-btn single-pdf-btn'>").attr("href", pdfOne).attr("target", "_blank").attr("rel", "noopener").text("PDF") :
-                        $("<a  class='card-btn'>").attr("href", pdfOne).attr("target", "_blank").attr("rel", "noopener").text("PDF 1")
-                    )
-                )
-            )
-        );
-        $(".row").append(newCard);
-    });
+    //     var newCard = $("<div class='col-lg-4 col-md-6 col-sm-6 col-12'>").append(
+    //         $("<div class='card'>").append(
+    //             $("<div class='img-container'>").append(
+    //                 $("<img class='card-img-top' loading='lazy' alt='" + setName + "'>").attr("src", img)
+    //             ),
+    //             $("<div class='card-body'>").append(
+    //                 $("<h6 class='card-id'>").text(setId),
+    //                 $("<img class='theme-logo' alt='theme logo'>").attr("src", themeLogo),
+    //                 $("<div class='card-title-container'>").append(
+    //                 $("<h5 class='card-title'>").text(setName)
+    //                 ),
+    //                 $("<hr>"),
+    //                 $("<span>").text("Pieces: " + pieces),
+    //                 pdfTwo ? $("<button class='btn-primary'>").append(
+    //                     $("<a  class='card-btn'>").attr("href", pdfTwo).attr("target", "_blank").attr("rel", "noopener").text("PDF 2"),
+    //                 ) : '',
+    //                 $("<button class='btn-primary'>").append(
+    //                     !pdfTwo ?
+    //                     $("<a  class='card-btn single-pdf-btn'>").attr("href", pdfOne).attr("target", "_blank").attr("rel", "noopener").text("PDF") :
+    //                     $("<a  class='card-btn'>").attr("href", pdfOne).attr("target", "_blank").attr("rel", "noopener").text("PDF 1")
+    //                 )
+    //             )
+    //         )
+    //     );
+    //     $(".row").append(newCard);
+    // });
 
     var arr;
     var starArr = [];
@@ -59,34 +60,23 @@ $(document).ready(function() {
 
     database.ref().on("value", function(snapshot) {
         arr = snapshot.val();
-        // console.log(arr);
+
         for (var i = 0; i<arr.length; i++) {
-            // console.log(arr[i])
             var item = arr[i];
-            item.theme === "Star Wars" ? starArr.push(item) : item.theme === "Marvel" ? marvelArr.push(item) : technicArr.push(item);
+            item.array === "starArr" ? starArr.push(item) : item.array === "marvelArr" ? marvelArr.push(item) : technicArr.push(item);
             item.setId ? idArr.push(item.setId) : '';
         }
 
-        
-
-        // console.log(starArr);
-        // console.log(marvelArr);
-
+        // generates theme header and options for each theme array alphabetically
         const formOptions = ( arr ) => {
-            // var sortArr = [];
-
-            // arr.forEach(function(item) {
-            //     sortArr.push(item.name);
-            //     sortArr.sort();
-            // })
-
+            
             arr.sort((a, b) => (a.name > b.name) ? 1 : -1)
             console.log(arr)
 
             $("#form-select-name").append(
                 $("<option disabled unselectable='true'>").text(" "),
                 $("<option disabled unselectable='true'>").text(arr[0].theme).attr("style", "font-weight: bold; font-size: 1rem;"),
-                $("<option value='" + arr[0].theme + "'>").text("All " + arr[0].theme + " Sets"),
+                $("<option value='" + arr[0].array + "'>").text("All " + arr[0].theme + " Sets"),
             )
             
             arr.forEach(function(item) {
@@ -108,14 +98,100 @@ $(document).ready(function() {
             })
         }
 
+        const newCard = ( data ) => {
+            const card =
+            $("<div class='card-col col-lg-4 col-md-6 col-sm-6 col-12'>").append(
+            $("<div class='card'>").append(
+                $("<div class='img-container'>").append(
+                    $("<img class='card-img-top' loading='lazy' alt='" + data.name + "'>").attr("src", data.imgUrl)
+                ),
+                $("<div class='card-body'>").append(
+                    $("<h6 class='card-id'>").text(data.setId),
+                    $("<img class='theme-logo' alt='theme logo'>").attr("src", data.themeLogo),
+                    $("<div class='card-title-container'>").append(
+                    $("<h5 class='card-title'>").text(data.name)
+                    ),
+                    $("<hr>"),
+                    $("<span>").text("Pieces: " + data.pieces),
+                    data.pdfTwo ? $("<button class='btn-primary'>").append(
+                        $("<a  class='card-btn'>").attr("href", data.pdfTwo).attr("target", "_blank").attr("rel", "noopener").text("PDF 2"),
+                    ) : '',
+                    $("<button class='btn-primary'>").append(
+                        !data.pdfTwo ?
+                        $("<a  class='card-btn single-pdf-btn'>").attr("href", data.pdfOne).attr("target", "_blank").attr("rel", "noopener").text("PDF") :
+                        $("<a  class='card-btn'>").attr("href", data.pdfOne).attr("target", "_blank").attr("rel", "noopener").text("PDF 1")
+                    )
+                )
+            )
+        )
+        $(".row").append(card);
+    };
+
+        const newCards = ( item ) => {
+
+            item.forEach( data => {
+                newCard(data);
+
+                
+                // var newCard = $("<div class='card-col col-lg-4 col-md-6 col-sm-6 col-12'>").append(
+                //     $("<div class='card'>").append(
+                //         $("<div class='img-container'>").append(
+                //             $("<img class='card-img-top' loading='lazy' alt='" + data.name + "'>").attr("src", data.imgUrl)
+                //         ),
+                //         $("<div class='card-body'>").append(
+                //             $("<h6 class='card-id'>").text(data.setId),
+                //             $("<img class='theme-logo' alt='theme logo'>").attr("src", data.themeLogo),
+                //             $("<div class='card-title-container'>").append(
+                //             $("<h5 class='card-title'>").text(data.name)
+                //             ),
+                //             $("<hr>"),
+                //             $("<span>").text("Pieces: " + data.pieces),
+                //             data.pdfTwo ? $("<button class='btn-primary'>").append(
+                //                 $("<a  class='card-btn'>").attr("href", data.pdfTwo).attr("target", "_blank").attr("rel", "noopener").text("PDF 2"),
+                //             ) : '',
+                //             $("<button class='btn-primary'>").append(
+                //                 !data.pdfTwo ?
+                //                 $("<a  class='card-btn single-pdf-btn'>").attr("href", data.pdfOne).attr("target", "_blank").attr("rel", "noopener").text("PDF") :
+                //                 $("<a  class='card-btn'>").attr("href", data.pdfOne).attr("target", "_blank").attr("rel", "noopener").text("PDF 1")
+                //             )
+                //         )
+                //     )
+                // )
+                // $(".row").append(newCard);
+            })
+        }
+
+        $("#form-select-name").on("change", () => {
+            var inputName = $("#form-select-name option:selected").val();
+            var setArr;
+            console.log(inputName);
+            $(".card-col").remove();
+            inputName === "starArr" ? setArr = starArr :
+            inputName === "marvelArr" ? setArr = marvelArr :
+            inputName === "technicArr" ? setArr = technicArr :
+            inputName === "arr" ? setArr = arr : "";
+            newCards(setArr);
+
+        })
+
+        $("#form-select-id").on("change", () => {
+            var inputId = $("#form-select-id option:selected").val();
+            console.log(inputId);
+        })
+
+        // populates select forms
         formOptions(marvelArr);
         formOptions(starArr);
         formOptions(technicArr);
         sortId(idArr);
+
     }, function(error) {
         console.log("Error: " + error.code)
     });
 
+    
+
+    // ----------------- navBar js -----------------
     // add padding top to show content behind navbar
     $('body').css('padding-top', $('.navbar').outerHeight() + 'px');
 
@@ -133,4 +209,6 @@ $(document).ready(function() {
             last_scroll_top = scroll_top;
         });
     }
+    // ----------------- end of navBar js -----------------
+
 });
