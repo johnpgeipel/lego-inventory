@@ -60,8 +60,7 @@ body {
 
 .img-container {
     /* height: 175px; */
-    height: 200px;
-    
+    height: 250px;
     display: flex;
     padding: 10px;
     overflow: hidden;
@@ -168,6 +167,6 @@ button {
     }
 
     .img-col-one {
-        height: 200px;
+        height: 250px;
     }
 }
