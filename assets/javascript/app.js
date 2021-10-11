@@ -210,7 +210,7 @@ $(document).ready(function() {
                 maxScale: 5
                 })
                 panzoom.pan(10, 10)
-                panzoom.zoom(2, { animate: true }
+                panzoom.zoom(2.5, { animate: true }
             )
         });
         $('.card-img-top').on('mouseleave', function() {
