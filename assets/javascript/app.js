@@ -218,9 +218,8 @@ $(document).ready(function() {
             // const elem = $this;
 
             const panzoom = Panzoom($this, {
-                maxScale: 5
+                disablePan: true
                 })
-                panzoom.disablePan(true)
                 panzoom.zoom(1, { animate: true }
             )
         })
