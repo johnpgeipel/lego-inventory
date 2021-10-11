@@ -62,11 +62,7 @@ $(document).ready(function() {
                 )
             })
         }
-
-        const setColumn = ( arr ) => {
-            // var column = $(".col-card");
-            
-        }
+        
         // single card creation
         const newCard = ( data ) => {
             
@@ -84,10 +80,10 @@ $(document).ready(function() {
                     ),
                     $("<hr>"),
                     $("<span>").text("Pieces: " + data.pieces),
-                    data.pdfTwo ? $("<button class='btn-danger'>").append(
+                    data.pdfTwo ? $("<button type='button' class='btn btn-danger'>").append(
                         $("<a  class='card-btn'>").attr("href", data.pdfTwo).attr("target", "_blank").attr("rel", "noopener").text("PDF 2"),
                     ) : '',
-                    $("<button class='btn-danger'>").append(
+                    $("<button type='button' class='btn btn-danger'>").append(
                         !data.pdfTwo ?
                         $("<a  class='card-btn single-pdf-btn'>").attr("href", data.pdfOne).attr("target", "_blank").attr("rel", "noopener").text("PDF") :
                         $("<a  class='card-btn'>").attr("href", data.pdfOne).attr("target", "_blank").attr("rel", "noopener").text("PDF 1")
@@ -96,8 +92,6 @@ $(document).ready(function() {
             )
             )
             $(".row").append(card);
-            
-
         };
         // multiple card creation
         const newCards = ( item ) => {
@@ -110,8 +104,6 @@ $(document).ready(function() {
         $("#form-select-name").on("change", () => {
             var inputName = $("#form-select-name option:selected").val();
             var setArr;
-            console.log(inputName);
-
             $(".card-col").remove();
 
             isNaN(inputName) &&
@@ -130,15 +122,15 @@ $(document).ready(function() {
                 })
             ) : "";
                 
-            console.log(setArr);
-            
-            $("body").css("background", "#EEEEEE").css("transition", "background .4s ease");
+            $(".jumbotron").css({
+                height: "100%",
+                transition: "height 2s ease-in-out"
+            });
+            $(".jumbotron").css("margin-bottom", "20px");
 
             !isNaN(parseInt(setArr)) ?
             newCard(setArr) :
             newCards(setArr);
-
-            console.log(setArr.length)
 
             setArr.length === 1 ? $(".card-col").addClass("card-col-one") :
             setArr.length > 1 ? $(".card-col").removeClass("card-col-one") : "";
@@ -147,27 +139,25 @@ $(document).ready(function() {
         $("#form-select-id").on("change", () => {
             var inputId = $("#form-select-id option:selected").val();
             var setArr;
-            console.log(inputId);
 
             $(".card-col").remove();
 
             !isNaN(parseInt(inputId)) ?
             setArr = (
                 arr.filter( item => {
-                    // console.log((item.setId === inputId) && item.setId);
                     return item.setId === inputId;
                 })
             ) : setArr = arr;
 
-            console.log(setArr);
-            $("body").css("background", "#EEEEEE").css("transition", "background .4s ease");
+            $(".jumbotron").css({
+                height: "100%",
+                transition: "height 2s ease-in-out"
+            });
+            $(".jumbotron").css("margin-bottom", "20px");
             
             !isNaN(parseInt(setArr)) ?
             newCard(setArr) :
             newCards(setArr);
-
-            console.log(setArr.length)
-
 
             setArr.length === 1 ? $(".card-col").addClass("card-col-one") :
             setArr.length > 1 ? $(".card-col").removeClass("card-col-one") : "";
@@ -183,8 +173,4 @@ $(document).ready(function() {
     }, function(error) {
         console.log("Error: " + error.code)
     });
-
-    // ----------------- navBar js -----------------
-    // add padding top to show content behind navbar
-    // $('body').css('padding-top', $('.navbar').outerHeight() + 'px');
 });
