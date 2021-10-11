@@ -56,11 +56,11 @@ body {
 }
 
 .theme-logo {
-    width: 50px;
+    max-height: 1.85rem;
+    max-width: 6rem;
 }
 
 .img-container {
-    /* height: 175px; */
     height: 250px;
     display: flex;
     padding: 10px;
