@@ -30,7 +30,7 @@ $(document).ready(function() {
             item.array === "creatorArr" ? creatorArr.push(item) :
             technicArr.push(item);
             item.setId ? idArr.push(item.setId) : '';
-        }
+        };
 
         // generates theme header and options for each theme array alphabetically
         const formOptions = ( arr ) => {
@@ -49,7 +49,7 @@ $(document).ready(function() {
                     $("<option value='" + item.setId + "'>").text(item.name)
                 )
             })
-        }
+        };
 
         // sorts setId for ID select form
         const sortId = ( arr ) => {
@@ -61,7 +61,7 @@ $(document).ready(function() {
                     $("<option value='" + item + "'>").text(item)
                 )
             })
-        }
+        };
         
         // single card creation
         const newCard = ( data ) => {
@@ -73,7 +73,7 @@ $(document).ready(function() {
                     $("<img class='card-img-top' loading='lazy' alt='" + data.name + "'>").attr("src", data.imgUrl)
                 ),
                 $("<div class='card-body'>").append(
-                    $("<h6 class='card-id'>").text(data.setId),
+                    $("<h6 class='card-id'>").text("#" + data.setId),
                     $("<img class='theme-logo' alt='theme logo'>").attr("src", data.themeLogo),
                     $("<div class='card-title-container'>").append(
                     $("<h5 class='card-title'>").text(data.name)
@@ -89,8 +89,7 @@ $(document).ready(function() {
                         $("<a  class='card-btn'>").attr("href", data.pdfOne).attr("target", "_blank").attr("rel", "noopener").text("PDF 1")
                     )
                 )
-            )
-            )
+            ));
             $(".row").append(card);
         };
         // multiple card creation
@@ -98,6 +97,22 @@ $(document).ready(function() {
             item.forEach( data => {
                 newCard(data);
             });
+        };
+
+        const jumbotronOnChange = () => {
+            $(".jumbotron").css({
+                height: "100%",
+                transition: "height 2s ease-in-out"
+            });
+            $(".jumbotron").css("margin-bottom", "25px");
+            $("#card-container").css({
+                marginBottom: "40px"
+            })
+        };
+
+        const setColumns = ( arg ) => {
+            arg.length === 1 ? $(".card-col").addClass("card-col-one") :
+            arg.length > 1 ? $(".card-col").removeClass("card-col-one") : "";
         };
 
         // name select form logic
@@ -121,20 +136,24 @@ $(document).ready(function() {
                     
                 })
             ) : "";
-                
-            $(".jumbotron").css({
-                height: "100%",
-                transition: "height 2s ease-in-out"
-            });
-            $(".jumbotron").css("margin-bottom", "20px");
 
             !isNaN(parseInt(setArr)) ?
             newCard(setArr) :
             newCards(setArr);
 
-            setArr.length === 1 ? $(".card-col").addClass("card-col-one") :
-            setArr.length > 1 ? $(".card-col").removeClass("card-col-one") : "";
-        })
+            // setArr.length === 1 ? $(".card-col").addClass("card-col-one") :
+            // setArr.length > 1 ? $(".card-col").removeClass("card-col-one") : "";
+
+
+            setColumns(setArr);
+            jumbotronOnChange();
+
+            // $(".jumbotron").css({
+            //     height: "100%",
+            //     transition: "height 2s ease-in-out"
+            // });
+            // $(".jumbotron").css("margin-bottom", "25px");
+        });
         // id select form logic
         $("#form-select-id").on("change", () => {
             var inputId = $("#form-select-id option:selected").val();
@@ -148,20 +167,23 @@ $(document).ready(function() {
                     return item.setId === inputId;
                 })
             ) : setArr = arr;
-
-            $(".jumbotron").css({
-                height: "100%",
-                transition: "height 2s ease-in-out"
-            });
-            $(".jumbotron").css("margin-bottom", "20px");
             
             !isNaN(parseInt(setArr)) ?
             newCard(setArr) :
             newCards(setArr);
 
-            setArr.length === 1 ? $(".card-col").addClass("card-col-one") :
-            setArr.length > 1 ? $(".card-col").removeClass("card-col-one") : "";
-        })
+            // setArr.length === 1 ? $(".card-col").addClass("card-col-one") :
+            // setArr.length > 1 ? $(".card-col").removeClass("card-col-one") : "";
+
+            setColumns(setArr);
+            jumbotronOnChange();
+
+            // $(".jumbotron").css({
+            //     height: "100%",
+            //     transition: "height 2s ease-in-out"
+            // });
+            // $(".jumbotron").css("margin-bottom", "25px");
+        });
 
         // populates select forms
         formOptions(creatorArr);
