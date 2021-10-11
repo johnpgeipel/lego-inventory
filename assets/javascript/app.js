@@ -210,8 +210,7 @@ $(document).ready(function() {
                 maxScale: 5
                 })
                 panzoom.pan(10, 10)
-                panzoom.zoom(2.5, { animate: true }
-            )
+                panzoom.zoom(2.5, { animate: true })
         });
         $('.card-img-top').on('mouseleave', function() {
             $this = this;
@@ -220,8 +219,9 @@ $(document).ready(function() {
             const panzoom = Panzoom($this, {
                 disablePan: true
                 })
-                panzoom.zoom(1, { animate: true }
-            )
+                panzoom.zoom(1, { animate: true })
+                panzoom.resetStyle()
+            
         })
 
         
