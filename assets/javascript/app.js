@@ -70,7 +70,7 @@ $(document).ready(function() {
             $("<div class='card-col col-lg-4 col-md-6 col-sm-6 col-12'>").append(
             $("<div class='card'>").append(
                 $("<div class='img-container'>").append(
-                    $("<img class='card-img-top' loading='lazy' alt='" + data.name + "'>").attr("src", data.imgUrl)
+                    $("<img id='panzoom-element' class='card-img-top' loading='lazy' alt='" + data.name + "'>").attr("src", data.imgUrl)
                 ),
                 $("<div class='card-body'>").append(
                     $("<h6 class='card-id'>").text("#" + data.setId),
@@ -111,7 +111,10 @@ $(document).ready(function() {
         };
 
         const setColumns = ( arg ) => {
-            arg.length === 1 ? $(".card-col").addClass("card-col-one") :
+            arg.length === 1 ? (
+                $(".card-col").addClass("card-col-one"),
+                $(".img-container").addClass("img-col-one")
+            ) :
             arg.length > 1 ? $(".card-col").removeClass("card-col-one") : "";
         };
 
@@ -140,6 +143,7 @@ $(document).ready(function() {
             !isNaN(parseInt(setArr)) ?
             newCard(setArr) :
             newCards(setArr);
+            panImg();
 
             // setArr.length === 1 ? $(".card-col").addClass("card-col-one") :
             // setArr.length > 1 ? $(".card-col").removeClass("card-col-one") : "";
@@ -171,6 +175,7 @@ $(document).ready(function() {
             !isNaN(parseInt(setArr)) ?
             newCard(setArr) :
             newCards(setArr);
+            panImg();
 
             // setArr.length === 1 ? $(".card-col").addClass("card-col-one") :
             // setArr.length > 1 ? $(".card-col").removeClass("card-col-one") : "";
@@ -195,4 +200,38 @@ $(document).ready(function() {
     }, function(error) {
         console.log("Error: " + error.code)
     });
+
+    const panImg = () => {
+        $('.card-img-top').on('mouseenter', function() {
+            $this = this;
+            // const elem = $this;
+
+            const panzoom = Panzoom($this, {
+                maxScale: 5
+                })
+                panzoom.pan(10, 10)
+                panzoom.zoom(2, { animate: true }
+            )
+        });
+        $('.card-img-top').on('mouseleave', function() {
+            $this = this;
+            // const elem = $this;
+
+            const panzoom = Panzoom($this, {
+                maxScale: 5
+                })
+                panzoom.pan(10, 10)
+                panzoom.zoom(1, { animate: true }
+            )
+        })
+
+        
+        // panzoom.zoom(2, { animate: true })
+
+        // Panning and pinch zooming are bound automatically (unless disablePan is true).
+        // There are several available methods for zooming
+        // that can be bound on button clicks or mousewheel.
+        // $('img').on('click', panzoom.zoomIn);
+        // elem.parentElement.addEventListener('wheel', panzoom.zoomWithWheel)
+    }
 });
