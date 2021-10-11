@@ -220,7 +220,7 @@ $(document).ready(function() {
             const panzoom = Panzoom($this, {
                 maxScale: 5
                 })
-                panzoom.pan(10, 10)
+                panzoom.pan(0, 0)
                 panzoom.zoom(1, { animate: true }
             )
         })
