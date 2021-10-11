@@ -4,7 +4,7 @@ body {
 }
 
 .jumbotron {
-    background: url("../images/black-lego-2.jpeg");
+    background: url("../images/grey-lego.jpg");
 /*     background: url("../images/yellow-lego.jpg"); */
     object-fit: contain;
     opacity: 1;
