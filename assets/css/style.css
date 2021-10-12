@@ -29,13 +29,15 @@ body {
 }
 
 .form-container {
-    padding: 12px 0px;
+    padding: 0px 0px 12px;
 }
 
 .form-select {
     max-width: 300px;
     margin: 10px auto;
     opacity: 1;
+    padding-top: .125rem;
+    padding-bottom: .125rem
 }
 
 .display-4 {
@@ -189,6 +191,10 @@ button {
 }
 
 @media screen and (max-width: 577px) {
+
+    .form-select {
+        width: 250px;
+    }
     .card-title {
         font-size: 25px;
     }

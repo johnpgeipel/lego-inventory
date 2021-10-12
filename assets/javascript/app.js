@@ -107,7 +107,7 @@ $(document).ready(function() {
         const jumbotronOnChange = () => {
             const $jumbotron = $(".jumbotron")
             $jumbotron.animate({paddingTop: "2vh"});
-            $jumbotron.css({height: "225px"});
+            $jumbotron.css({height: "100%"});
             $jumbotron.animate({marginBottom: "25px"}, ".5s");
             $("#card-container").css({
                 marginBottom: "40px"
