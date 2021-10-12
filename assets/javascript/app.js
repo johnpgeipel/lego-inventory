@@ -21,7 +21,8 @@ $(document).ready(function() {
     var idArr = [];
 
     var date = new Date().getFullYear();
-    $("#copy-year").html("<span>&copy; " + date + " John Geipel</span>")
+    $("#copy-year").html(
+        "<div class='footer-info'><span>&copy; " + date + " John Geipel </span><a href='https://github.com/johnpgeipel' target='_blank' aria-label='github link'><i class='fa fa-github' style='font-size:24px;color:#eeeeee;'></i></a><a href='https://www.linkedin.com/in/johnpgeipel' target='_blank' aria-label='linkedin link'><i class='fa fa-linkedin' style='font-size:24px;color:#eeeeee;'></i></a></div>")
 
     database.ref().on("value", function(snapshot) {
         arr = snapshot.val();
@@ -96,7 +97,6 @@ $(document).ready(function() {
             $(".row").append(card);
         };
 
-
         // multiple card creation
         const newCards = ( item ) => {
             item.forEach( data => {
@@ -105,14 +105,14 @@ $(document).ready(function() {
         };
 
         const jumbotronOnChange = () => {
-            $(".jumbotron").css({
-                height: "100%",
-                transition: "height 2s ease-in-out"
-            });
-            $(".jumbotron").css("margin-bottom", "25px");
+            const $jumbotron = $(".jumbotron")
+            $jumbotron.animate({paddingTop: "2vh"});
+            $jumbotron.css({height: "225px"});
+            $jumbotron.animate({marginBottom: "25px"}, ".5s");
             $("#card-container").css({
                 marginBottom: "40px"
-            })
+            });
+            $(".footer-info span").animate({fontSize: "15px"});
         };
 
         const setColumns = ( arg ) => {
@@ -141,7 +141,6 @@ $(document).ready(function() {
                 arr.filter( item => {
                     console.log((item.setId === inputName) && item.setId);
                     return item.setId === inputName;
-                    
                 })
             ) : "";
 
@@ -150,21 +149,10 @@ $(document).ready(function() {
             newCards(setArr);
             panImg();
             setFooter();
-
-
-            // setArr.length === 1 ? $(".card-col").addClass("card-col-one") :
-            // setArr.length > 1 ? $(".card-col").removeClass("card-col-one") : "";
-
-
             setColumns(setArr);
             jumbotronOnChange();
-
-            // $(".jumbotron").css({
-            //     height: "100%",
-            //     transition: "height 2s ease-in-out"
-            // });
-            // $(".jumbotron").css("margin-bottom", "25px");
         });
+
         // id select form logic
         $("#form-select-id").on("change", () => {
             var inputId = $("#form-select-id option:selected").val();
@@ -184,18 +172,8 @@ $(document).ready(function() {
             newCards(setArr);
             panImg();
             setFooter();
-
-            // setArr.length === 1 ? $(".card-col").addClass("card-col-one") :
-            // setArr.length > 1 ? $(".card-col").removeClass("card-col-one") : "";
-
             setColumns(setArr);
             jumbotronOnChange();
-
-            // $(".jumbotron").css({
-            //     height: "100%",
-            //     transition: "height 2s ease-in-out"
-            // });
-            // $(".jumbotron").css("margin-bottom", "25px");
         });
 
         // populates select forms
@@ -212,8 +190,6 @@ $(document).ready(function() {
     const panImg = () => {
         $('.card-img-top').on('mouseenter', function() {
             $this = this;
-            // const elem = $this;
-
             const panzoom = Panzoom($this, {
                 maxScale: 5
                 })
@@ -222,35 +198,21 @@ $(document).ready(function() {
         });
         $('.card-img-top').on('mouseleave', function() {
             $this = this;
-            // const elem = $this;
-
             const panzoom = Panzoom($this, {
                 disablePan: true
                 })
                 panzoom.zoom(1, { animate: true })
                 panzoom.resetStyle()
-            
-        })
-
-        
-        // panzoom.zoom(2, { animate: true })
-
-        // Panning and pinch zooming are bound automatically (unless disablePan is true).
-        // There are several available methods for zooming
-        // that can be bound on button clicks or mousewheel.
-        // $('img').on('click', panzoom.zoomIn);
-        // elem.parentElement.addEventListener('wheel', panzoom.zoomWithWheel)
-    }
+        });
+    };
 
     const setFooter = () => {
         $(".main-footer").css({
             background: "#000000",
             color: "#eeeeee",
-            opacity: "0.75"
-        });
-    }
+            opacity: "0.75",
+            height: "30px",
+            transition: "height .3s ease-in-out"
+        })
+    };
 });
-
-// var date = new Date().getFullYear();
-// $("#copy-year").html("<span>&copy; John Geipel " + date + "</span>")
-
