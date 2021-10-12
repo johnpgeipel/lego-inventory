@@ -67,6 +67,8 @@ body {
     display: flex;
     padding: 10px;
     overflow: hidden;
+    border-bottom: 1px solid #b4b4b471;
+    border-radius: .25rem .25rem 0rem 0rem;
 }
 
 .card-img-top {
@@ -149,7 +151,7 @@ button {
 
 .main-footer {
     background-color: transparent;
-    opacity: .75;
+    /* opacity: .75; */
     height: 30px;
     text-align: center;
     font-family: 'Poppins', sans-serif;

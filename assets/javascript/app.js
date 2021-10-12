@@ -21,7 +21,7 @@ $(document).ready(function() {
     var idArr = [];
 
     var date = new Date().getFullYear();
-    $("#copy-year").html("<span>&copy; John Geipel " + date + "</span>")
+    $("#copy-year").html("<span>&copy; " + date + " John Geipel</span>")
 
     database.ref().on("value", function(snapshot) {
         arr = snapshot.val();
@@ -245,7 +245,8 @@ $(document).ready(function() {
     const setFooter = () => {
         $(".main-footer").css({
             background: "#000000",
-            color: "#eeeeee"
+            color: "#eeeeee",
+            opacity: "0.75"
         });
     }
 });
