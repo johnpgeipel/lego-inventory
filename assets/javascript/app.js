@@ -95,6 +95,7 @@ $(document).ready(function() {
                 )
             ));
             $(".row").append(card);
+            $(".card").animate({marginTop: "0px"}, "slow");
         };
 
         // multiple card creation

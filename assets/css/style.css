@@ -49,6 +49,10 @@ body {
 }
 
 .card {
+    margin-top: 100%;
+}
+
+.card {
     border: none;
     box-shadow: 0px 2px 7px #6e6e6e49;
     margin-bottom: 15px;
@@ -179,6 +183,8 @@ button {
     margin: 0px 5px;
 }
 
+
+
 /* variables */
 .card-col-one {
     margin: 0 auto;
@@ -214,8 +220,6 @@ button {
         height: 30px;
     }
 }
-
-
 
 /* fontawesome */
 .fab {
