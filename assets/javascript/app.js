@@ -20,6 +20,9 @@ $(document).ready(function() {
     var creatorArr = [];
     var idArr = [];
 
+    var date = new Date().getFullYear();
+    $("#copy-year").html("<span>&copy; " + date + " John Geipel</span>")
+
     database.ref().on("value", function(snapshot) {
         arr = snapshot.val();
         // sorts objects into seperate arrays
@@ -92,6 +95,8 @@ $(document).ready(function() {
             ));
             $(".row").append(card);
         };
+
+
         // multiple card creation
         const newCards = ( item ) => {
             item.forEach( data => {
@@ -144,6 +149,8 @@ $(document).ready(function() {
             newCard(setArr) :
             newCards(setArr);
             panImg();
+            setFooter();
+
 
             // setArr.length === 1 ? $(".card-col").addClass("card-col-one") :
             // setArr.length > 1 ? $(".card-col").removeClass("card-col-one") : "";
@@ -176,6 +183,7 @@ $(document).ready(function() {
             newCard(setArr) :
             newCards(setArr);
             panImg();
+            setFooter();
 
             // setArr.length === 1 ? $(".card-col").addClass("card-col-one") :
             // setArr.length > 1 ? $(".card-col").removeClass("card-col-one") : "";
@@ -233,4 +241,16 @@ $(document).ready(function() {
         // $('img').on('click', panzoom.zoomIn);
         // elem.parentElement.addEventListener('wheel', panzoom.zoomWithWheel)
     }
+
+    const setFooter = () => {
+        $(".main-footer").css({
+            background: "#000000",
+            color: "#eeeeee",
+            opacity: "0.75"
+        });
+    }
 });
+
+// var date = new Date().getFullYear();
+// $("#copy-year").html("<span>&copy; John Geipel " + date + "</span>")
+
