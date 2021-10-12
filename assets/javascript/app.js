@@ -22,7 +22,7 @@ $(document).ready(function() {
 
     var date = new Date().getFullYear();
     $("#copy-year").html(
-        "<div class='footer-info'><span>&copy; " + date + " John Geipel </span><a href='https://github.com/johnpgeipel' target='_blank' aria-label='github link'><i class='fa fa-github' style='font-size:24px;color:#eeeeee;'></i></a><a href='https://www.linkedin.com/in/johnpgeipel' target='_blank' aria-label='linkedin link'><i class='fa fa-linkedin' style='font-size:24px;color:#eeeeee;'></i></a></div>")
+        "<div class='footer-info'><span>&copy; " + date + " John Geipel </span><a href='https://github.com/johnpgeipel' target='_blank' rel='noopener' aria-label='github link'><i class='fa fa-github' style='font-size:24px;color:#eeeeee;'></i></a><a href='https://www.linkedin.com/in/johnpgeipel' target='_blank' rel='noopener' aria-label='linkedin link'><i class='fa fa-linkedin' style='font-size:24px;color:#eeeeee;'></i></a></div>")
 
     database.ref().on("value", function(snapshot) {
         arr = snapshot.val();
