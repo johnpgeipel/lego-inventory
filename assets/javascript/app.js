@@ -95,7 +95,10 @@ $(document).ready(function() {
                 )
             ));
             $(".row").append(card);
-            $(".card").animate({marginTop: "0px"}, "slow");
+            $(".card").animate({
+                marginTop: "0px",
+                opacity: "1"
+            }, "slow");
         };
 
         // multiple card creation
