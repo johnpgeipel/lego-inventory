@@ -39,12 +39,12 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0px 0px 0px 10px;
     font-size: 17px;
-    font-weight: 400;
+    font-weight: 200;
     transition: font-weight ease-in-out;
 }
 
 #search-text:hover {
-    font-weight: 600;
+    font-weight: 400;
     transition: font-weight ease-in-out;
 }
 
