@@ -28,7 +28,7 @@ body {
 
 .form-search-btn {
     display: flex;
-    margin-bottom: 5px;
+    margin: 5px 0;
 }
 
 .fa-search {
