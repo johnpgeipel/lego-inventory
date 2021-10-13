@@ -16,7 +16,7 @@ body {
 }
 
 .jumbotron-container {
-    height: 75px;
+    height: 65px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,6 +30,7 @@ body {
 
 .form-search-btn {
     display: flex;
+    margin-bottom: 5px;
 }
 
 .fa-search {
