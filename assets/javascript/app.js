@@ -122,7 +122,8 @@ $(document).ready(function() {
         const setColumns = ( arg ) => {
             arg.length === 1 ? (
                 $(".card-col").addClass("card-col-one"),
-                $(".img-container").addClass("img-col-one")
+                $(".img-container").addClass("img-col-one"),
+                $(".card-title").addClass("title-col-one)
             ) :
             arg.length > 1 ? $(".card-col").removeClass("card-col-one") : "";
         };
