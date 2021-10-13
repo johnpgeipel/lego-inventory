@@ -74,6 +74,7 @@ body {
 .display-4 {
     display: flex;
     font-family: 'Poppins', sans-serif;
+    font-weight: 100;
     color: #eeeeee;
     letter-spacing: 3px;
     margin-bottom: 0;
