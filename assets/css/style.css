@@ -155,13 +155,13 @@ body {
     border: none;
     border: 1px solid #d01012;
     padding: 0;
-    transition: .2s ease-in-out;
+    transition: .1s ease-in-out;
 }
 
 .btn-danger:hover {
     background: #eeeeee;
     color: #d01012;
-    transition: .2s ease-in-out;
+    transition: .1s ease-in-out;
 }
 
 button a {
