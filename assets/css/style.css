@@ -208,6 +208,7 @@ button {
 .footer-info span {
     margin-right: 10px;
     line-height: 33px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .fa-github, .fa-linkedin {
