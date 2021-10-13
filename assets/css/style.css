@@ -225,7 +225,7 @@ button {
     max-width: 900px;
 }
 
-.card-col-one h5 .card-title {
+.card-col-one > .card-title {
     font-size: 2rem;
 }
 
