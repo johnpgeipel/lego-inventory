@@ -225,6 +225,10 @@ button {
     max-width: 900px;
 }
 
+.card-col-one.card-title {
+    font-size: 2rem;
+}
+
 .img-col-one {
 /*     height: 300px; */
     height: 50vh;
