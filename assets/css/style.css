@@ -209,6 +209,7 @@ button {
     margin-right: 10px;
     line-height: 33px;
     font-family: 'Poppins', sans-serif;
+    font-weight: 100;
 }
 
 .fa-github, .fa-linkedin {
@@ -256,7 +257,7 @@ button {
 }
 
 /* fontawesome */
-.fab {
+/* .fab {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     display: inline-block;
@@ -288,4 +289,4 @@ button {
         content: "\f08c"; }
 
     .fa-linkedin-in:before {
-        content: "\f0e1"; }
+        content: "\f0e1"; } */
