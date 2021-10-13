@@ -225,20 +225,20 @@ button {
     max-width: 900px;
 }
 
-.card-col-one > .card-title {
-    font-size: 2rem;
-}
-
 .img-col-one {
 /*     height: 300px; */
     height: 50vh;
+}
+
+.title-col-one {
+    font-size: 2rem;
 }
 
 @media screen and (max-width: 577px) {
     .form-select {
         width: 250px;
     }
-    .card-title {
+    .card-title, title-col-one {
         font-size: 25px;
     }
 
