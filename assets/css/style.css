@@ -221,8 +221,8 @@ button {
 /* variables */
 .card-col-one {
     margin: 0 auto;
-    width: 60%;
-    max-width: 500px;
+    width: 100%;
+    max-width: 900px;
 }
 
 .img-col-one {
