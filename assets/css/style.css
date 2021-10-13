@@ -16,7 +16,7 @@ body {
 }
 
 .jumbotron-container {
-    height: 65px;
+    height: 70px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -253,6 +253,10 @@ button {
     .header-logo {
         width: 30px;
         height: 30px;
+    }
+
+    .jumbotron-container {
+        height: 65px;
     }
 }
 
