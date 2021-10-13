@@ -26,16 +26,21 @@
             <h1 class="display-4">John's Legos</h1>
         </div>
         <div class="container form-container">
-            <select id="form-select-name" class="form-select" aria-label="Default select example">
-                <option id="form-option-name" disabled selected>Select Sets by Name</option>
-                <option disabled></option>
+            <div class="form-search-btn" role="button" aria-hidden="false">
+                <i class="fa fa-search" style="font-size:17px; color:#eeeeee;"><span id="search-text">Search</span></i>
+            </div>
+            <div class="selectForm">
+                <select id="form-select-name" class="form-select" aria-label="Default select example">
+                    <option id="form-option-name" disabled selected>Select Sets by Name</option>
+                    <option disabled></option>
 
-                <option value="arr">All Sets</option>
-            </select>
-            <select id="form-select-id" class="form-select" aria-label="Default select example">
-                <option id="form-option-id" disabled selected>Select Sets by ID</option>
-                <option value="allSets">All Sets</option>
-            </select>
+                    <option value="arr">All Sets</option>
+                </select>
+                <select id="form-select-id" class="form-select" aria-label="Default select example">
+                    <option id="form-option-id" disabled selected>Select Sets by ID</option>
+                    <option value="allSets">All Sets</option>
+                </select>
+            </div>
         </div>
     </div>
     <div id="card-container" class="container">

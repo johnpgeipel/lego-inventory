@@ -148,6 +148,8 @@ $(document).ready(function() {
                 })
             ) : "";
 
+            closeForm();
+
             !isNaN(parseInt(setArr)) ?
             newCard(setArr) :
             newCards(setArr);
@@ -171,6 +173,8 @@ $(document).ready(function() {
                 })
             ) : setArr = arr;
             
+            closeForm();
+
             !isNaN(parseInt(setArr)) ?
             newCard(setArr) :
             newCards(setArr);
@@ -218,5 +222,17 @@ $(document).ready(function() {
             height: "30px",
             transition: "height .3s ease-in-out"
         })
+    };
+
+    $("#search-text").on("click", () => {
+        console.log("click");
+        $(".selectForm").hasClass("openForm") ?
+        $(".selectForm").removeClass("openForm") :
+        $(".selectForm").addClass("openForm");
+
+    })
+
+    const closeForm = () => {
+        $(".selectForm").removeClass("openForm");
     };
 });
