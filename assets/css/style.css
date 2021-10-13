@@ -1,18 +1,16 @@
-
 body {
     background: #d3d3d33f;
-
 }
 
 .jumbotron {
     background: url("../images/darkGrey-lego-1.jpg");
     object-fit: contain;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     opacity: 1;
     padding-top: 27vh;
     height: 100vh;
     transition: height .5s ease-in-out;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
 }
 
 .jumbotron-container {
@@ -30,7 +28,7 @@ body {
 
 .form-search-btn {
     display: flex;
-    margin-bottom: 5px;
+    margin: 5px 0;
 }
 
 .fa-search {
@@ -41,13 +39,12 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0px 0px 0px 10px;
     font-size: 17px;
-    font-weight: 400;
-    
+    font-weight: 200;
     transition: font-weight ease-in-out;
 }
 
 #search-text:hover {
-    font-weight: 600;
+    font-weight: 400;
     transition: font-weight ease-in-out;
 }
 
@@ -77,6 +74,7 @@ body {
 .display-4 {
     display: flex;
     font-family: 'Poppins', sans-serif;
+    font-weight: 100;
     color: #eeeeee;
     letter-spacing: 3px;
     margin-bottom: 0;
@@ -209,16 +207,16 @@ button {
 }
 
 .footer-info span {
-    margin-right: 10px;
+    margin-right: 5px;
     line-height: 33px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 100;
 }
 
 .fa-github, .fa-linkedin {
-    transform: translateY(3px);
+    transform: translateY(2px);
     margin: 0px 5px;
 }
-
-
 
 /* variables */
 .card-col-one {
@@ -232,7 +230,6 @@ button {
 }
 
 @media screen and (max-width: 577px) {
-
     .form-select {
         width: 250px;
     }
@@ -261,7 +258,7 @@ button {
 }
 
 /* fontawesome */
-.fab {
+/* .fab {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     display: inline-block;
@@ -273,24 +270,24 @@ button {
 
 .fa-github:before {
     content: "\f09b"; }
-  
-  .fa-github-alt:before {
-    content: "\f113"; }
-  
-  .fa-github-square:before {
-    content: "\f092"; }
-  
-  .fa-gitkraken:before {
-    content: "\f3a6"; }
-  
-  .fa-gitlab:before {
-    content: "\f296"; }
-  
-  .fa-gitter:before {
-    content: "\f426"; }
 
-.fa-linkedin:before {
-    content: "\f08c"; }
-    
+    .fa-github-alt:before {
+        content: "\f113"; }
+
+    .fa-github-square:before {
+        content: "\f092"; }
+
+    .fa-gitkraken:before {
+        content: "\f3a6"; }
+
+    .fa-gitlab:before {
+        content: "\f296"; }
+
+    .fa-gitter:before {
+        content: "\f426"; }
+
+    .fa-linkedin:before {
+        content: "\f08c"; }
+
     .fa-linkedin-in:before {
-    content: "\f0e1"; }
+        content: "\f0e1"; } */
