@@ -75,7 +75,7 @@ $(document).ready(function() {
             $("<div class='card'>").append(
                 $("<div class='img-container'>").append(
                     $("<img id='panzoom-element' class='card-img-top' loading='lazy' alt='" + data.name + "'>").attr("src", data.imgUrl),
-                    $("<i class='fa fa-arrows-alt' style='font-size:22px;color:#000000;'></i>")
+                    $("<i class='fa fa-arrows-alt' style='font-size:20px; color:#6e6e6e72;'></i>")
                 ),
                 $("<div class='card-body'>").append(
                     $("<h6 class='card-id'>").text("#" + data.setId),
