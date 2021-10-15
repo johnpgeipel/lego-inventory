@@ -35,6 +35,12 @@ body {
     margin: 0 auto;
 }
 
+.fa-arrows-alt {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+
 #search-text {
     font-family: 'Poppins', sans-serif;
     margin: 0px 0px 0px 10px;
