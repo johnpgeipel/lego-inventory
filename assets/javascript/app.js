@@ -21,7 +21,8 @@ $(document).ready(function() {
     var idArr = [];
 
     var date = new Date().getFullYear();
-    $("#copy-year").html("<span>&copy; " + date + " John Geipel</span>")
+    $("#copy-year").html(
+        "<div class='footer-info'><span>&copy; " + date + " John Geipel </span><a href='https://github.com/johnpgeipel' target='_blank' rel='noopener' aria-label='github link'><i class='fa fa-github' style='font-size:22px;color:#eeeeee;'></i></a><a href='https://www.linkedin.com/in/johnpgeipel' target='_blank' rel='noopener' aria-label='linkedin link'><i class='fa fa-linkedin' style='font-size:22px;color:#eeeeee;'></i></a></div>")
 
     database.ref().on("value", function(snapshot) {
         arr = snapshot.val();
@@ -73,7 +74,8 @@ $(document).ready(function() {
             $("<div class='card-col col-lg-4 col-md-6 col-sm-6 col-12'>").append(
             $("<div class='card'>").append(
                 $("<div class='img-container'>").append(
-                    $("<img id='panzoom-element' class='card-img-top' loading='lazy' alt='" + data.name + "'>").attr("src", data.imgUrl)
+                    $("<img id='panzoom-element' class='card-img-top' loading='lazy' alt='" + data.name + "'>").attr("src", data.imgUrl),
+                    $("<i class='fa fa-arrows-alt' style='font-size:20px; color:#6e6e6e72;'></i>")
                 ),
                 $("<div class='card-body'>").append(
                     $("<h6 class='card-id'>").text("#" + data.setId),
@@ -94,8 +96,11 @@ $(document).ready(function() {
                 )
             ));
             $(".row").append(card);
+            $(".card").animate({
+                marginTop: "0px",
+                opacity: "1"
+            }, "slow");
         };
-
 
         // multiple card creation
         const newCards = ( item ) => {
@@ -105,20 +110,21 @@ $(document).ready(function() {
         };
 
         const jumbotronOnChange = () => {
-            $(".jumbotron").css({
-                height: "100%",
-                transition: "height 2s ease-in-out"
-            });
-            $(".jumbotron").css("margin-bottom", "25px");
+            const $jumbotron = $(".jumbotron")
+            $jumbotron.animate({paddingTop: "2vh"});
+            $jumbotron.css({height: "100%"});
+            $jumbotron.animate({marginBottom: "25px"}, ".5s");
             $("#card-container").css({
                 marginBottom: "40px"
-            })
+            });
+            $(".footer-info span").animate({fontSize: "15px"});
         };
 
         const setColumns = ( arg ) => {
             arg.length === 1 ? (
                 $(".card-col").addClass("card-col-one"),
-                $(".img-container").addClass("img-col-one")
+                $(".img-container").addClass("img-col-one"),
+                $(".card-title").addClass("title-col-one")
             ) :
             arg.length > 1 ? $(".card-col").removeClass("card-col-one") : "";
         };
@@ -141,30 +147,20 @@ $(document).ready(function() {
                 arr.filter( item => {
                     console.log((item.setId === inputName) && item.setId);
                     return item.setId === inputName;
-                    
                 })
             ) : "";
+
+            closeForm();
 
             !isNaN(parseInt(setArr)) ?
             newCard(setArr) :
             newCards(setArr);
             panImg();
             setFooter();
-
-
-            // setArr.length === 1 ? $(".card-col").addClass("card-col-one") :
-            // setArr.length > 1 ? $(".card-col").removeClass("card-col-one") : "";
-
-
             setColumns(setArr);
             jumbotronOnChange();
-
-            // $(".jumbotron").css({
-            //     height: "100%",
-            //     transition: "height 2s ease-in-out"
-            // });
-            // $(".jumbotron").css("margin-bottom", "25px");
         });
+
         // id select form logic
         $("#form-select-id").on("change", () => {
             var inputId = $("#form-select-id option:selected").val();
@@ -179,23 +175,15 @@ $(document).ready(function() {
                 })
             ) : setArr = arr;
             
+            closeForm();
+
             !isNaN(parseInt(setArr)) ?
             newCard(setArr) :
             newCards(setArr);
             panImg();
             setFooter();
-
-            // setArr.length === 1 ? $(".card-col").addClass("card-col-one") :
-            // setArr.length > 1 ? $(".card-col").removeClass("card-col-one") : "";
-
             setColumns(setArr);
             jumbotronOnChange();
-
-            // $(".jumbotron").css({
-            //     height: "100%",
-            //     transition: "height 2s ease-in-out"
-            // });
-            // $(".jumbotron").css("margin-bottom", "25px");
         });
 
         // populates select forms
@@ -212,8 +200,6 @@ $(document).ready(function() {
     const panImg = () => {
         $('.card-img-top').on('mouseenter', function() {
             $this = this;
-            // const elem = $this;
-
             const panzoom = Panzoom($this, {
                 maxScale: 5
                 })
@@ -222,35 +208,33 @@ $(document).ready(function() {
         });
         $('.card-img-top').on('mouseleave', function() {
             $this = this;
-            // const elem = $this;
-
             const panzoom = Panzoom($this, {
                 disablePan: true
                 })
                 panzoom.zoom(1, { animate: true })
                 panzoom.resetStyle()
-            
-        })
-
-        
-        // panzoom.zoom(2, { animate: true })
-
-        // Panning and pinch zooming are bound automatically (unless disablePan is true).
-        // There are several available methods for zooming
-        // that can be bound on button clicks or mousewheel.
-        // $('img').on('click', panzoom.zoomIn);
-        // elem.parentElement.addEventListener('wheel', panzoom.zoomWithWheel)
-    }
+        });
+    };
 
     const setFooter = () => {
         $(".main-footer").css({
             background: "#000000",
             color: "#eeeeee",
-            opacity: "0.75"
-        });
-    }
+            opacity: "0.75",
+            height: "30px",
+            transition: "height .3s ease-in-out"
+        })
+    };
+
+    $("#search-text").on("click", () => {
+        console.log("click");
+        $(".selectForm").hasClass("openForm") ?
+        $(".selectForm").removeClass("openForm") :
+        $(".selectForm").addClass("openForm");
+
+    })
+
+    const closeForm = () => {
+        $(".selectForm").removeClass("openForm");
+    };
 });
-
-// var date = new Date().getFullYear();
-// $("#copy-year").html("<span>&copy; John Geipel " + date + "</span>")
-
