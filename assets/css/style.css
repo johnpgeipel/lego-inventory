@@ -1,3 +1,7 @@
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
 body {
     background: #d3d3d33f;
 }
@@ -33,6 +37,13 @@ body {
 
 .fa-search {
     margin: 0 auto;
+}
+
+.fa-arrows-alt {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
 }
 
 #search-text {
@@ -221,19 +232,24 @@ button {
 /* variables */
 .card-col-one {
     margin: 0 auto;
-    width: 60%;
-    max-width: 500px;
+    width: 100%;
+    max-width: 900px;
 }
 
 .img-col-one {
-    height: 300px;
+/*     height: 300px; */
+    height: 50vh;
+}
+
+.title-col-one {
+    font-size: 2rem;
 }
 
 @media screen and (max-width: 577px) {
     .form-select {
         width: 250px;
     }
-    .card-title {
+    .card-title, title-col-one {
         font-size: 25px;
     }
 
