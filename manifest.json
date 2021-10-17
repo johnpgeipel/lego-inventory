@@ -10,7 +10,7 @@
         "type": "image/png"
       },
       {
-        "src": "./assets/images/lego-icon.png",
+        "src": "./assets/images/lego-icon-lg.png",
         "sizes": "512x512",
         "type": "image/png"
       }
