@@ -163,6 +163,7 @@ body {
     color: #eeeeee;
     border: none;
     border: 1px solid #d01012;
+    background: #d01012;
     padding: 0;
     transition: .1s ease-in-out;
 }
