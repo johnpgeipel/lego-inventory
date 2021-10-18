@@ -198,7 +198,7 @@ $(document).ready(function() {
     });
 
     const panImg = () => {
-        $('.card-img-top').on('mouseenter', function() {
+        $('.card-img-top').on('click', function() {
             $this = this;
             const panzoom = Panzoom($this, {
                 maxScale: 5
