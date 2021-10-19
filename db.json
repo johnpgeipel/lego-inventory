@@ -273,5 +273,16 @@
         "themeLogo": "https://www.lego.com/cdn/cs/set/assets/bltc55693f0b8cc3375/starWars_logo_pos_300w.png?format=png&height=40&dpr=1",
         "pdfOne": "https://www.lego.com/cdn/product-assets/product.bi.core.pdf/6218871.pdf",
         "pdfTwo": "https://www.lego.com/cdn/product-assets/product.bi.core.pdf/6199516.pdf"
+    },
+    {
+        "setId": "30449",
+        "name": "The Milano",
+        "pieces": "64",
+        "imgUrl": "https://www.lego.com/cdn/product-assets/product.img.pri/30449_Prod.jpg",
+        "theme": "Marvel",
+        "array": "marvelArr",
+        "themeLogo": "https://www.lego.com/cdn/cs/set/assets/bltdd909357fcaf0a02/Marvel.png?format=png&height=60&dpr=1",
+        "pdfOne": "https://www.lego.com/cdn/product-assets/product.bi.core.pdf/6196807.pdf",
+        "pdfTwo": ""
     }
 ]
