@@ -284,5 +284,49 @@
         "themeLogo": "https://www.lego.com/cdn/cs/set/assets/bltdd909357fcaf0a02/Marvel.png?format=png&height=60&dpr=1",
         "pdfOne": "https://www.lego.com/cdn/product-assets/product.bi.core.pdf/6196807.pdf",
         "pdfTwo": ""
+    },
+    {
+        "setId": "30525",
+        "name": "The Guardians' Ship",
+        "pieces": "69",
+        "imgUrl": "https://www.lego.com/cdn/cs/set/assets/bltbcad7f90bdc85d62/30525.jpg?fit=bounds&format=webply&quality=80&width=528&height=528&dpr=1.5",
+        "theme": "Marvel",
+        "array": "marvelArr",
+        "themeLogo": "https://www.lego.com/cdn/cs/set/assets/bltdd909357fcaf0a02/Marvel.png?format=png&height=60&dpr=1",
+        "pdfOne": "https://www.lego.com/cdn/product-assets/product.bi.core.pdf/6231792.pdf",
+        "pdfTwo": ""
+    },
+    {
+        "setId": "40451",
+        "name": "Tatooine™ Homestead",
+        "pieces": "217",
+        "imgUrl": "https://www.lego.com/cdn/cs/set/assets/bltb8c13a9c0fc09bf1/40451.jpg?fit=bounds&format=webply&quality=80&width=528&height=528&dpr=1.5",
+        "theme": "Star Wars",
+        "array": "starArr",
+        "themeLogo": "https://www.lego.com/cdn/cs/set/assets/bltc55693f0b8cc3375/starWars_logo_pos_300w.png?format=png&height=40&dpr=1",
+        "pdfOne": "",
+        "pdfTwo": ""
+    },
+    {
+        "setId": "40407",
+        "name": "Death Star II Battle",
+        "pieces": "235",
+        "imgUrl": "https://www.lego.com/cdn/cs/set/assets/blt2af49b1fcec18c52/40407.jpg?fit=bounds&format=webply&quality=80&width=528&height=528&dpr=1.5",
+        "theme": "Star Wars",
+        "array": "starArr",
+        "themeLogo": "https://www.lego.com/cdn/cs/set/assets/bltc55693f0b8cc3375/starWars_logo_pos_300w.png?format=png&height=40&dpr=1",
+        "pdfOne": "https://www.lego.com/cdn/product-assets/product.bi.core.pdf/6323940.pdf",
+        "pdfTwo": ""
+    },
+    {
+        "setId": "30497",
+        "name": "First Order Heavy Assault Walker™",
+        "pieces": "54",
+        "imgUrl": "https://www.lego.com/cdn/product-assets/product.img.pri/30497_Prod.jpg",
+        "theme": "Star Wars",
+        "array": "starArr",
+        "themeLogo": "https://www.lego.com/cdn/cs/set/assets/bltc55693f0b8cc3375/starWars_logo_pos_300w.png?format=png&height=40&dpr=1",
+        "pdfOne": "https://www.lego.com/cdn/product-assets/product.bi.core.pdf/6201722.pdf",
+        "pdfTwo": ""
     }
 ]

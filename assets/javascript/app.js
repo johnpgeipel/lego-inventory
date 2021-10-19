@@ -87,11 +87,11 @@ $(document).ready(function() {
                     $("<span>").text("Pieces: " + data.pieces),
                     data.pdfTwo ? $("<button type='button' class='btn btn-danger'>").append(
                         $("<a  class='card-btn'>").attr("href", data.pdfTwo).attr("target", "_blank").attr("rel", "noopener").text("PDF 2"),
-                    ) : '',
+                    ) : null,
                     $("<button type='button' class='btn btn-danger'>").append(
                         !data.pdfTwo ?
-                        $("<a  class='card-btn single-pdf-btn'>").attr("href", data.pdfOne).attr("target", "_blank").attr("rel", "noopener").text("PDF") :
-                        $("<a  class='card-btn'>").attr("href", data.pdfOne).attr("target", "_blank").attr("rel", "noopener").text("PDF 1")
+                        $("<a  class='card-btn single-pdf-btn'>").attr("href", data.pdfOne).attr("target", "_blank").attr("rel", "noopener").text("PDF") : data.pdfOne ?
+                        $("<a  class='card-btn'>").attr("href", data.pdfOne).attr("target", "_blank").attr("rel", "noopener").text("PDF 1") : null
                     )
                 )
             ));
