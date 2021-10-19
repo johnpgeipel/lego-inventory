@@ -145,7 +145,7 @@ body {
 .card-btn {
     text-decoration: none;
     font-weight: bold;
-    color: #eeeeee;
+    color: #ffffff;
     font-size: 12px;
     padding: 3px 10px;
     display: flex;
@@ -159,10 +159,11 @@ body {
 
 .btn-danger {
     float: right;
-    border-radius: 5px;
+    border-radius: 0px;
     color: #eeeeee;
     border: none;
     border: 1px solid #d01012;
+    background: #d01012;
     padding: 0;
     transition: .1s ease-in-out;
 }
@@ -194,6 +195,10 @@ button {
     width: 52px;
 }
 
+.btn {
+    border-radius: 0px;
+}
+
 .main-footer {
     background-color: transparent;
     display: flex;
@@ -202,7 +207,7 @@ button {
     font-weight: 500;
     font-size: 1rem;
     line-height: 30px;
-    color: white;
+    color: #ffffff;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -213,7 +218,6 @@ button {
     justify-items: center;
     align-content: center;
     margin: 0 auto;
-
     font-size: 20px;
 }
 
@@ -271,38 +275,3 @@ button {
         height: 65px;
     }
 }
-
-/* fontawesome */
-/* .fab {
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    display: inline-block;
-    font-style: normal;
-    font-variant: normal;
-    text-rendering: auto;
-    line-height: 1;
-}
-
-.fa-github:before {
-    content: "\f09b"; }
-
-    .fa-github-alt:before {
-        content: "\f113"; }
-
-    .fa-github-square:before {
-        content: "\f092"; }
-
-    .fa-gitkraken:before {
-        content: "\f3a6"; }
-
-    .fa-gitlab:before {
-        content: "\f296"; }
-
-    .fa-gitter:before {
-        content: "\f426"; }
-
-    .fa-linkedin:before {
-        content: "\f08c"; }
-
-    .fa-linkedin-in:before {
-        content: "\f0e1"; } */
