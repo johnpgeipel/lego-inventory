@@ -81,18 +81,24 @@ $(document).ready(function() {
                     $("<h6 class='card-id'>").text("#" + data.setId),
                     $("<img class='theme-logo' alt='theme logo'>").attr("src", data.themeLogo),
                     $("<div class='card-title-container'>").append(
-                    $("<h5 class='card-title'>").text(data.name)
+                        $("<h5 class='card-title'>").text(data.name)
                     ),
                     $("<hr>"),
                     $("<span>").text("Pieces: " + data.pieces),
                     data.pdfTwo ? $("<button type='button' class='btn btn-danger'>").append(
-                        $("<a  class='card-btn'>").attr("href", data.pdfTwo).attr("target", "_blank").attr("rel", "noopener").text("PDF 2"),
+                        $("<a  class='card-btn'>").attr("href", data.pdfTwo).attr("target", "_blank").attr("rel", "noopener").text("PDF 2")
                     ) : null,
-                    $("<button type='button' class='btn btn-danger'>").append(
-                        !data.pdfTwo ?
-                        $("<a  class='card-btn single-pdf-btn'>").attr("href", data.pdfOne).attr("target", "_blank").attr("rel", "noopener").text("PDF") : data.pdfOne ?
-                        $("<a  class='card-btn'>").attr("href", data.pdfOne).attr("target", "_blank").attr("rel", "noopener").text("PDF 1") : null
-                    )
+                    data.pdfOne && data.pdfTwo ?
+                        $("<button type='button' class='btn btn-danger'>").append(
+                            $("<a  class='card-btn'>").attr("href", data.pdfOne).attr("target", "_blank").attr("rel", "noopener").text("PDF 1")
+                        ) : data.pdfOne && !data.pdfTwo ?
+                            $("<button type='button' class='btn btn-danger'>").append(
+                            $("<a  class='card-btn single-pdf-btn'>").attr("href", data.pdfOne).attr("target", "_blank").attr("rel", "noopener").text("PDF")) : null
+                    // $("<button type='button' class='btn btn-danger'>").append(
+                    //     !data.pdfTwo ?
+                    //     $("<a  class='card-btn single-pdf-btn'>").attr("href", data.pdfOne).attr("target", "_blank").attr("rel", "noopener").text("PDF") : data.pdfOne ?
+                    //     $("<a  class='card-btn'>").attr("href", data.pdfOne).attr("target", "_blank").attr("rel", "noopener").text("PDF 1") : null
+                    // )
                 )
             ));
             $(".row").append(card);
