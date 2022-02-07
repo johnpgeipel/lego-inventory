@@ -90,15 +90,28 @@ $(document).ready(function() {
                     ),
                     $("<hr>"),
                     $("<span>").text("Pieces: " + data.pieces),
-                    data.pdfTwo ? $("<button type='button' class='btn btn-danger'>").append(
-                        $("<a  class='card-btn'>").attr("href", data.pdfTwo).attr("target", "_blank").attr("rel", "noopener").text("PDF 2")
-                    ) : null,
-                    data.pdfOne && data.pdfTwo ?
+                    data.pdfThree ? (
+                        $("<span>").append(
                         $("<button type='button' class='btn btn-danger'>").append(
-                            $("<a  class='card-btn'>").attr("href", data.pdfOne).attr("target", "_blank").attr("rel", "noopener").text("PDF 1")
-                        ) : data.pdfOne && !data.pdfTwo ?
-                            $("<button type='button' class='btn btn-danger'>").append(
-                            $("<a  class='card-btn single-pdf-btn'>").attr("href", data.pdfOne).attr("target", "_blank").attr("rel", "noopener").text("PDF")) : null
+                        $("<a class='card-btn'>").attr("href", data.pdfThree).attr("target", "_blank").attr("rel", "noopener").text("PDF 3")),
+                        $("<button type='button' class='btn btn-danger'>").append(
+                        $("<a class='card-btn'>").attr("href", data.pdfTwo).attr("target", "_blank").attr("rel", "noopener").text("PDF 2")),
+                        $("<button type='button' class='btn btn-danger'>").append(
+                        $("<a class='card-btn'>").attr("href", data.pdfOne).attr("target", "_blank").attr("rel", "noopener").text("PDF 1"))
+                        )
+                    ) : data.pdfTwo ? (
+                        $("<span>").append(
+                        $("<button type='button' class='btn btn-danger'>").append(
+                        $("<a  class='card-btn'>").attr("href", data.pdfTwo).attr("target", "_blank").attr("rel", "noopener").text("PDF 2")),
+                        $("<button type='button' class='btn btn-danger'>").append(
+                        $("<a  class='card-btn'>").attr("href", data.pdfOne).attr("target", "_blank").attr("rel", "noopener").text("PDF 1"))
+                        )
+                    ) : data.pdfOne ? (
+                        $("<span>").append(
+                        $("<button type='button' class='btn btn-danger'>").append(
+                        $("<a  class='card-btn single-pdf-btn'>").attr("href", data.pdfOne).attr("target", "_blank").attr("rel", "noopener").text("PDF"))
+                        )
+                    ) : null
                     // $("<button type='button' class='btn btn-danger'>").append(
                     //     !data.pdfTwo ?
                     //     $("<a  class='card-btn single-pdf-btn'>").attr("href", data.pdfOne).attr("target", "_blank").attr("rel", "noopener").text("PDF") : data.pdfOne ?
