@@ -15,6 +15,8 @@ var database = firebase.database();
 $(document).ready(function() {
     var arr;
     var starArr = [];
+    var brickArr = [];
+    var strangerArr = [];
     var marvelArr = [];
     var technicArr = [];
     var creatorArr = [];
@@ -22,7 +24,8 @@ $(document).ready(function() {
 
     var date = new Date().getFullYear();
     $("#copy-year").html(
-        "<div class='footer-info'><span>&copy; " + date + " John Geipel </span><a href='https://github.com/johnpgeipel' target='_blank' rel='noopener' aria-label='github link'><i class='fa fa-github' style='font-size:22px;color:#eeeeee;'></i></a><a href='https://www.linkedin.com/in/johnpgeipel' target='_blank' rel='noopener' aria-label='linkedin link'><i class='fa fa-linkedin' style='font-size:22px;color:#eeeeee;'></i></a></div>")
+        "<div class='footer-info'><span>&copy; " + date + " John Geipel </span><a href='https://github.com/johnpgeipel' target='_blank' rel='noopener' aria-label='github link'><i class='fa fa-github' style='font-size:22px;color:#eeeeee;'></i></a><a href='https://www.linkedin.com/in/johnpgeipel' target='_blank' rel='noopener' aria-label='linkedin link'><i class='fa fa-linkedin' style='font-size:22px;color:#eeeeee;'></i></a></div>"
+        )
 
     database.ref().on("value", function(snapshot) {
         arr = snapshot.val();
@@ -32,6 +35,8 @@ $(document).ready(function() {
             item.array === "starArr" ? starArr.push(item) :
             item.array === "marvelArr" ? marvelArr.push(item) :
             item.array === "creatorArr" ? creatorArr.push(item) :
+            item.array === "brickArr" ? brickArr.push(item) :
+            item.array === "strangerArr" ? strangerArr.push(item) :
             technicArr.push(item);
             item.setId ? idArr.push(item.setId) : '';
         };
@@ -143,9 +148,11 @@ $(document).ready(function() {
 
             isNaN(inputName) &&
             inputName === "starArr" ? setArr = starArr :
+            inputName === "brickArr" ? setArr = brickArr :
             inputName === "marvelArr" ? setArr = marvelArr :
             inputName === "technicArr" ? setArr = technicArr :
             inputName === "creatorArr" ? setArr = creatorArr :
+            inputName === "strangerArr" ? setArr = strangerArr :
             inputName === "arr" ? setArr = arr : "";
 
             !isNaN(parseInt(inputName)) ?
@@ -193,9 +200,11 @@ $(document).ready(function() {
         });
 
         // populates select forms
+        formOptions(brickArr);
         formOptions(creatorArr);
         formOptions(marvelArr);
         formOptions(starArr);
+        formOptions(strangerArr);
         formOptions(technicArr);
         sortId(idArr);
 
